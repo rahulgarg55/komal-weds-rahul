@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 ===================================================================================
-  KOMAL WEDS RAHUL - ROYAL INDIAN WEDDING INVITATION WEBSITE (ULTRA LUXURY EDITION)
+  KOMAL WEDS RAHUL - ROYAL INDIAN WEDDING INVITATION WEBSITE (ROYAL PALACE EDITION)
   • Couple: Komal & Rahul
   • Date: Wednesday, 25 November 2026
   • Venue: THE GRAND VILAS, Dirba, Punjab
@@ -20,7 +20,7 @@
   <meta name="keywords" content="Komal weds Rahul, Royal Wedding Invitation, The Grand Vilas Dirba, Punjabi Palace Wedding, Indian Wedding">
   <meta name="author" content="Families of Komal & Rahul">
   
-  <!-- Open Graph / WhatsApp Rich Sharing Cards -->
+  <!-- Open Graph / WhatsApp Rich Cards -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Komal Weds Rahul | 25 November 2026 | Royal Wedding Invitation">
   <meta property="og:description" content="Together with their families, Komal & Rahul joyfully request the pleasure of your company to celebrate their wedding at The Grand Vilas, Dirba, Punjab.">
@@ -28,7 +28,7 @@
   <meta property="og:url" content="https://rahulgarg55.github.io/komal-weds-rahul/">
   <meta name="theme-color" content="#38070e">
 
-  <!-- Google Fonts: Royal Calligraphy, Majestic Display Serif & Modern Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -78,7 +78,7 @@
       --radius-arch: 140px 140px 18px 18px;
     }
 
-    /* CSS Reset & Global Smoothness */
+    /* CSS Reset */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -102,7 +102,6 @@
       position: relative;
     }
 
-    /* Selection & Scrollbar */
     ::selection {
       background: var(--color-gold-primary);
       color: var(--color-royal-maroon);
@@ -117,11 +116,7 @@
       background: linear-gradient(180deg, var(--color-gold-dark), var(--color-gold-primary));
       border-radius: 6px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--color-gold-bright);
-    }
 
-    /* Typography Classes */
     .font-script { font-family: var(--font-script); }
     .font-serif { font-family: var(--font-serif); }
     .font-heading { font-family: var(--font-heading); }
@@ -169,7 +164,6 @@
       pointer-events: none;
     }
 
-    /* Left & Right Ornate Gates */
     .door {
       position: absolute;
       top: 0;
@@ -207,7 +201,6 @@
       transform: rotateY(112deg);
     }
 
-    /* Palace Door Ornaments */
     .door-pattern {
       position: absolute;
       inset: 0;
@@ -236,7 +229,6 @@
       border-radius: 205px 205px 0 0;
     }
 
-    /* Brass Door Handles */
     .door-knocker {
       position: absolute;
       top: 50%;
@@ -252,7 +244,6 @@
     .door-left .door-knocker { right: 30px; }
     .door-right .door-knocker { left: 30px; }
 
-    /* Center Seal Trigger */
     .door-seal-container {
       position: absolute;
       z-index: 25;
@@ -354,7 +345,6 @@
       transform: translateY(-2px);
     }
 
-    /* Light Rays & Particle Burst */
     .burst-light {
       position: absolute;
       width: 100vw;
@@ -369,7 +359,6 @@
       opacity: 1;
     }
 
-    /* Dynamic Particle Burst Container */
     #particle-burst-container {
       position: absolute;
       inset: 0;
@@ -400,7 +389,63 @@
     }
 
     /* ==========================================================================
-       STICKY LUXURY NAVIGATION & FLOATING CONTROLS
+       ROYAL FARMAN / PERSONALIZED GUEST BANNER
+       ========================================================================== */
+    .royal-farman-wrapper {
+      max-width: 760px;
+      margin: 0 auto 35px auto;
+      background: radial-gradient(circle, #fffdf8 0%, #fbf3e0 100%);
+      border: 2px solid var(--color-gold-primary);
+      border-radius: 12px;
+      padding: 22px 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(212, 175, 55, 0.2);
+      position: relative;
+      text-align: center;
+      color: var(--color-royal-maroon);
+    }
+
+    .royal-farman-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border: 1px dashed rgba(212, 175, 55, 0.6);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .farman-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-gold-dark);
+      font-weight: 700;
+    }
+
+    .farman-guest-name {
+      font-family: var(--font-script);
+      font-size: 2.8rem;
+      color: var(--color-royal-maroon);
+      line-height: 1.2;
+      margin: 4px 0 6px 0;
+    }
+
+    .farman-message {
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      font-style: italic;
+    }
+
+    .farman-customizer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       STICKY NAVIGATION BAR
        ========================================================================== */
     .royal-navbar {
       position: fixed;
@@ -435,8 +480,8 @@
     }
 
     .nav-brand-crest {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       fill: var(--color-gold-bright);
     }
 
@@ -549,7 +594,6 @@
       100% { height: 100%; }
     }
 
-    /* Floating Flower Shower / Shagun Button */
     .flower-shower-btn {
       position: fixed;
       bottom: 24px;
@@ -579,7 +623,7 @@
     }
 
     /* ==========================================================================
-       SECTION PATTERNS, MARIGOLD GARLANDS & ROYAL SEPARATORS
+       SECTION COMMON STYLES
        ========================================================================== */
     section {
       position: relative;
@@ -604,7 +648,6 @@
       color: var(--color-charcoal);
     }
 
-    /* Sacred Invocations & Shlokas */
     .sacred-header {
       text-align: center;
       margin-bottom: 15px;
@@ -666,7 +709,6 @@
       color: var(--color-text-muted);
     }
 
-    /* Ornate Gold Filigree Divider with Lotus */
     .gold-divider {
       display: flex;
       align-items: center;
@@ -688,7 +730,6 @@
       filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
     }
 
-    /* Hanging Marigold Garlands */
     .garland-banner {
       width: 100%;
       height: 52px;
@@ -753,7 +794,6 @@
       pointer-events: none;
     }
 
-    /* Royal Mascot: Royal Elephants facing inward */
     .hero-mascot-row {
       display: flex;
       align-items: center;
@@ -869,7 +909,7 @@
     }
 
     /* ==========================================================================
-       SECTION 3: LIVE COUNTDOWN TIMER
+       SECTION 3: LIVE COUNTDOWN & WORLDWIDE TIME CONVERTER
        ========================================================================== */
     .countdown-grid {
       display: grid;
@@ -915,6 +955,22 @@
       font-weight: 500;
     }
 
+    .world-clock-box {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--color-gold-light);
+      background: rgba(20, 2, 5, 0.6);
+      border: 1px dashed rgba(212, 175, 55, 0.4);
+      border-radius: 50px;
+      padding: 12px 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .wedding-day-message {
       display: none;
       text-align: center;
@@ -926,6 +982,77 @@
       border: 2.5px solid var(--color-gold-primary);
       border-radius: var(--radius-md);
       box-shadow: 0 0 50px rgba(212, 175, 55, 0.6);
+    }
+
+    /* ==========================================================================
+       SECTION 3.5: SACRED DIYA LIGHTING CEREMONY (UNIQUE INTERACTION)
+       ========================================================================== */
+    .diya-ceremony-section {
+      background: radial-gradient(circle at 50% 50%, #460d16 0%, #200307 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.35);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 55px 20px;
+      text-align: center;
+      color: var(--color-ivory);
+    }
+
+    .diya-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .diya-container:hover {
+      transform: scale(1.06);
+    }
+
+    .diya-flame {
+      width: 22px;
+      height: 38px;
+      background: radial-gradient(circle at 50% 80%, #fff 0%, #ffeb3b 40%, #ff5722 80%, transparent 100%);
+      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+      margin-bottom: -6px;
+      filter: drop-shadow(0 0 16px #ff9800) drop-shadow(0 0 32px #ff5722);
+      animation: flickerFlame 1.8s infinite ease-in-out alternate;
+      transform-origin: 50% 90%;
+      transition: opacity 0.5s;
+    }
+
+    .diya-flame.unlit {
+      opacity: 0.15;
+      animation: none;
+      filter: none;
+    }
+
+    @keyframes flickerFlame {
+      0% { transform: scale(1) rotate(-2deg); }
+      25% { transform: scale(1.08, 0.95) rotate(1deg); }
+      50% { transform: scale(0.96, 1.05) rotate(-1deg); }
+      75% { transform: scale(1.04, 0.98) rotate(2deg); }
+      100% { transform: scale(1) rotate(-1deg); }
+    }
+
+    .diya-base-svg {
+      width: 110px;
+      height: 65px;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.7));
+    }
+
+    .diya-counter-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(20, 2, 5, 0.85);
+      border: 1.5px solid var(--color-gold-bright);
+      color: var(--color-gold-bright);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
     /* ==========================================================================
@@ -1194,7 +1321,6 @@
       margin-bottom: 16px;
     }
 
-    /* Dress Code Palette Circles */
     .dresscode-palette {
       display: flex;
       align-items: center;
@@ -1357,7 +1483,6 @@
       transform: translateY(-3px);
     }
 
-    /* Destination Guide & Weather Card */
     .destination-guide-box {
       margin-top: 40px;
       padding: 24px;
@@ -1384,7 +1509,7 @@
 
     /* ==========================================================================
        SECTION 8: PHOTO GALLERY WITH LIGHTBOX
-       ========================================================================== */
+       ======================================================================== */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -1440,7 +1565,6 @@
       opacity: 1;
     }
 
-    /* Lightbox Modal */
     #lightbox {
       position: fixed;
       inset: 0;
@@ -1505,7 +1629,63 @@
     .lightbox-next { right: 22px; }
 
     /* ==========================================================================
-       SECTION 9: RSVP FORM & PERSONALIZED PASS GENERATOR
+       SECTION 8.5: COUPLE TRIVIA / QUIZ (UNIQUE INTERACTION)
+       ========================================================================== */
+    .quiz-container {
+      max-width: 760px;
+      margin: 40px auto 0 auto;
+      background: rgba(46, 5, 11, 0.85);
+      border: 2px solid var(--color-gold-primary);
+      border-radius: var(--radius-md);
+      padding: 35px 28px;
+      text-align: center;
+      color: var(--color-ivory);
+    }
+
+    .quiz-question-box {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+
+    .quiz-question {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-gold-bright);
+      margin-bottom: 14px;
+    }
+
+    .quiz-options {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--color-gold-primary);
+      color: var(--color-ivory);
+      padding: 10px 22px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      transition: all 0.3s;
+    }
+
+    .quiz-opt-btn:hover {
+      background: var(--color-gold-primary);
+      color: var(--color-royal-maroon);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #2e7d32 !important;
+      border-color: #81c784 !important;
+      color: #fff !important;
+    }
+
+    /* ==========================================================================
+       SECTION 9: RSVP FORM & PERSONALIZED ROYAL PASS GENERATOR
        ========================================================================== */
     .rsvp-container {
       max-width: 720px;
@@ -1592,7 +1772,6 @@
       color: #33691e;
     }
 
-    /* Personalized Digital Invitation Pass Modal / Preview */
     .royal-pass-card {
       background: radial-gradient(circle at 50% 50%, #4a0e17 0%, #200307 100%);
       border: 3px solid var(--color-gold-bright);
@@ -1615,7 +1794,7 @@
     }
 
     /* ==========================================================================
-       SECTION 10: SANGEET SONG SUGGESTION WIDGET & WISHES WALL
+       SECTION 10: WISHES WALL & SANGEET SONG SUGGESTION
        ========================================================================== */
     .wishes-input-box {
       max-width: 680px;
@@ -1672,7 +1851,6 @@
       text-align: right;
     }
 
-    /* Sangeet Song Suggestions Wall */
     .song-box-container {
       margin-top: 50px;
       background: var(--color-cream);
@@ -1795,6 +1973,10 @@
 
     .footer-calendar-btn {
       margin-bottom: 45px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .footer-bottom {
@@ -1881,7 +2063,7 @@
       }
     }
 
-    /* Sparkle Particle Cursor Effect (Desktop) */
+    /* Sparkle Particle Cursor Effect */
     .sparkle-trail {
       position: fixed;
       pointer-events: none;
@@ -1898,6 +2080,288 @@
       0% { opacity: 1; transform: scale(1); }
       100% { opacity: 0; transform: scale(0.2) translate(var(--dx), var(--dy)); }
     }
+  
+    /* ==========================================================================
+       SECTION 3.9: BILINGUAL SWITCHER, SHAGUN LIFAFA & RITUALS GUIDE
+       ========================================================================== */
+    .lang-toggle-btn {
+      background: linear-gradient(135deg, #ffd700, #c4962c);
+      color: #2b0408;
+      border: 1px solid #ffe873;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .lang-toggle-btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(212,175,55,0.45);
+    }
+
+    /* Virtual Shagun Lifafa (Digital Cash Envelope) */
+    .shagun-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(18, 2, 4, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .shagun-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .shagun-modal-card {
+      background: linear-gradient(145deg, #42080f, #230206);
+      border: 2px solid var(--color-gold);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 30px 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212,175,55,0.3);
+      position: relative;
+      color: var(--color-ivory);
+      animation: modalSlideUp 0.4s ease forwards;
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(40px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .shagun-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid var(--color-gold-dark);
+      color: var(--color-gold-light);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .shagun-close-btn:hover {
+      background: #7a1523;
+      transform: scale(1.1);
+    }
+    .shagun-envelope-visual {
+      background: linear-gradient(135deg, #7a1523, #450b13);
+      border: 2px solid var(--color-gold-light);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    }
+    .shagun-coin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #ffd700, #b8860b);
+      color: #2b0408;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+      margin-bottom: 10px;
+    }
+    .shagun-amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .shagun-amount-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--color-gold-dark);
+      color: var(--color-gold-light);
+      padding: 10px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .shagun-amount-btn:hover, .shagun-amount-btn.active {
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+      color: #2b0408;
+      border-color: #ffd700;
+      transform: scale(1.04);
+    }
+    .shagun-stamp-picker {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 14px 0;
+    }
+    .shagun-stamp-opt {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--color-gold-dark);
+      background: rgba(0,0,0,0.3);
+      color: var(--color-gold);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .shagun-stamp-opt.active, .shagun-stamp-opt:hover {
+      border-color: #ffd700;
+      background: #7a1523;
+      transform: scale(1.15);
+      box-shadow: 0 0 14px rgba(212,175,55,0.5);
+    }
+
+    /* Sacred Rituals Section & Tabs */
+    .rituals-tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 30px auto;
+      max-width: 500px;
+      background: rgba(212, 175, 55, 0.12);
+      padding: 6px;
+      border-radius: 40px;
+      border: 1px solid var(--color-gold-dark);
+    }
+    .rituals-tab-btn {
+      flex: 1;
+      padding: 11px 18px;
+      border-radius: 30px;
+      border: none;
+      background: transparent;
+      color: var(--color-gold-light);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .rituals-tab-btn.active {
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+      color: #2b0408;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .ritual-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+    .ritual-card {
+      background: linear-gradient(145deg, #fffdf8, #f8efe0);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 16px;
+      padding: 24px 20px;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      color: var(--color-royal-maroon);
+    }
+    .ritual-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(212,175,55,0.22);
+    }
+    .ritual-step-badge {
+      display: inline-block;
+      background: var(--color-royal-maroon);
+      color: var(--color-gold-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .ritual-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--color-royal-maroon);
+      margin-bottom: 6px;
+    }
+    .ritual-gurmukhi {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #8b1c2b;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .ritual-meaning {
+      font-size: 0.9rem;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    /* Folk Boliyan & Tappe Sing-Along */
+    .boli-card {
+      background: linear-gradient(135deg, rgba(74,14,24,0.04), rgba(212,175,55,0.08));
+      border: 1px dashed var(--color-gold);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .boli-title {
+      font-weight: 700;
+      color: var(--color-royal-maroon);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .boli-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #5c141d;
+      line-height: 1.5;
+    }
+
+    /* Sound Rhythm Selector Dock */
+    .sound-modes-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .sound-mode-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--color-gold-dark);
+      color: var(--color-gold-light);
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sound-mode-chip:hover {
+      background: var(--color-gold);
+      color: #2b0408;
+    }
+
   </style>
 </head>
 <body>
@@ -1936,6 +2400,9 @@
   <!-- Background Music Audio Element -->
   <audio id="wedding-music" preload="auto" loop></audio>
 
+  <!-- Hidden Canvas for E-Card Image Generation -->
+  <canvas id="invitation-card-canvas" width="1080" height="1350" style="display:none;"></canvas>
+
   <!-- ========================================================================
        STICKY NAVIGATION BAR
        ======================================================================== -->
@@ -1946,13 +2413,19 @@
       </svg>
       Komal & Rahul
     </a>
+    
+    <button class="lang-toggle-btn" id="lang-toggle-nav" onclick="toggleLanguage()" title="Switch Language / ਭਾਸ਼ਾ ਬਦਲੋ">
+      <span>ੴ ਪੰਜਾਬੀ</span>
+    </button>
     <button class="nav-toggle-btn" id="nav-toggle" aria-label="Toggle navigation">☰</button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#countdown">Countdown</a></li>
+      <li><a href="#diya-section">Light Diya</a></li>
       <li><a href="#story">Our Story</a></li>
       <li><a href="#couple">The Couple</a></li>
       <li><a href="#events">Events</a></li>
+      <li><a href="#rituals">Rituals & 4 Laavan</a></li>
       <li><a href="#venue">Venue</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#rsvp">RSVP</a></li>
@@ -1960,15 +2433,22 @@
     </ul>
   </nav>
 
-  <!-- Floating Audio & Share Controls -->
+  <!-- Floating Audio, Live Dhol Beat & Share Controls -->
   <div class="floating-tools">
-    <button class="tool-btn" id="music-toggle-btn" title="Toggle Shehnai / Music" aria-label="Toggle background music">
+    <button class="tool-btn" id="music-toggle-btn" title="Toggle Shehnai Music" aria-label="Toggle background music">
       <div class="music-waves music-paused" id="music-waves-icon">
         <div class="wave-bar"></div>
         <div class="wave-bar"></div>
         <div class="wave-bar"></div>
         <div class="wave-bar"></div>
       </div>
+    </button>
+    
+    <button class="tool-btn" id="shagun-lifafa-btn" title="Send Traditional Shagun Lifafa" aria-label="Send Shagun" onclick="openShagunModal()">
+      <span style="font-size:1.35rem;">🧧</span>
+    </button>
+    <button class="tool-btn" id="dhol-beat-btn" title="Tap to Play Punjabi Dhol Beat!" aria-label="Play Punjabi Dhol Beat">
+      <span style="font-size:1.4rem;">🥁</span>
     </button>
     <button class="tool-btn" id="share-invite-btn" title="Share Invitation" aria-label="Share wedding invitation">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1987,13 +2467,25 @@
   </button>
 
   <!-- ========================================================================
-       SECTION 2: HERO SECTION
+       SECTION 2: HERO SECTION WITH ROYAL FARMAN & ELEPHANTS
        ======================================================================== -->
   <header id="hero" class="section-maroon">
     <canvas id="petals-canvas"></canvas>
     <div class="garland-banner garland-top"></div>
 
     <div class="hero-jharokha-frame" id="hero-frame">
+      <!-- Personalized Royal Farman (Guest Scroll) -->
+      <div class="royal-farman-wrapper" id="farman-wrapper">
+        <div class="farman-title">⚜ Royal Wedding Invitation Farman ⚜</div>
+        <h2 class="farman-guest-name" id="farman-display-name">Respected Guest & Family</h2>
+        <p class="farman-message">We cordially seek the honor of your presence and warm blessings as we unite in holy matrimony.</p>
+        
+        <div class="farman-customizer">
+          <input type="text" id="farman-input-name" placeholder="Type your family name here..." style="padding:6px 14px; border:1px solid #d4af37; border-radius:20px; font-size:0.88rem; outline:none; max-width:230px;">
+          <button onclick="personalizeInvitation()" class="btn-gold-primary" style="padding:6px 16px; font-size:0.85rem;">Personalize</button>
+        </div>
+      </div>
+
       <div class="hero-mascot-row">
         <!-- Left Elephant SVG -->
         <svg class="royal-mascot-elephant" viewBox="0 0 24 24">
@@ -2046,7 +2538,7 @@
   </header>
 
   <!-- ========================================================================
-       SECTION 3: LIVE COUNTDOWN TIMER
+       SECTION 3: LIVE COUNTDOWN & WORLDWIDE TIME CONVERTER
        ======================================================================== -->
   <section id="countdown" class="section-maroon" style="padding-top: 50px; border-bottom: 2px solid var(--color-gold-dark);">
     <div class="section-container">
@@ -2075,11 +2567,62 @@
         </div>
       </div>
 
+      <!-- Worldwide Time Zone Guide for NRI Family -->
+      <div class="world-clock-box">
+        <span>🌍 <strong>Worldwide Ceremony Times:</strong></span>
+        <span>🇮🇳 India: <strong>11:00 AM IST</strong></span>
+        <span>🇨🇦 Canada: <strong>12:30 AM EST</strong></span>
+        <span>🇬🇧 UK: <strong>5:30 AM GMT</strong></span>
+        <span>🇦🇺 Australia: <strong>4:30 PM AEST</strong></span>
+      </div>
+
       <div class="wedding-day-message" id="wedding-day-msg">
         Today is the day! 🎉 With blessings, music, and eternal love!
       </div>
     </div>
   </section>
+
+  <!-- ========================================================================
+       SECTION 3.5: SACRED DIYA LIGHTING CEREMONY (UNIQUE INTERACTION)
+       ======================================================================== -->
+  <div id="diya-section" class="diya-ceremony-section">
+    <div class="section-container">
+      <div style="font-size:1.1rem; color:var(--color-gold-bright); letter-spacing:2px; text-transform:uppercase; font-family:var(--font-heading);">
+        🪔 Sacred Diya Lighting Ceremony (ਦਿਵਾ ਜਗਾਓ)
+      </div>
+      <p style="font-size:0.95rem; color:var(--color-gold-light); margin-top:6px; max-width:600px; margin-left:auto; margin-right:auto;">
+        Tap the traditional brass diya below to bestow your warm light and blessings upon Komal & Rahul.
+      </p>
+
+      <div class="diya-container" id="sacred-diya-trigger" title="Tap to light the diya">
+        <div class="diya-flame" id="diya-flame-element"></div>
+        <svg class="diya-base-svg" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Traditional Brass Diya SVG -->
+          <ellipse cx="50" cy="22" rx="44" ry="14" fill="url(#brassGrad)" stroke="#ffdf73" stroke-width="2"/>
+          <path d="M6 22C10 40 32 50 50 50C68 50 90 40 94 22C84 34 66 38 50 38C34 38 16 34 6 22Z" fill="url(#brassDarkGrad)"/>
+          <path d="M50 20C40 20 28 24 50 24C72 24 60 20 50 20Z" fill="#ff9800"/>
+          <defs>
+            <linearGradient id="brassGrad" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#aa771c"/>
+              <stop offset="0.5" stop-color="#fce599"/>
+              <stop offset="1" stop-color="#8c6314"/>
+            </linearGradient>
+            <linearGradient id="brassDarkGrad" x1="0" y1="0" x2="100" y2="50" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#b38728"/>
+              <stop offset="0.5" stop-color="#d4af37"/>
+              <stop offset="1" stop-color="#553a06"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div>
+        <div class="diya-counter-badge" id="diya-count-display">
+          🪔 <span id="diya-counter-number">524</span> Sacred Diyas Lit with Love
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        SECTION 4: OUR STORY TIMELINE
@@ -2162,7 +2705,6 @@
         <div class="couple-card">
           <div class="avatar-frame">
             <div class="avatar-inner">
-              <!-- Stylized Royal Indian Bride Vector -->
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48" fill="#4a0e17"/>
                 <path d="M50 24C41 24 35 30 35 39C35 48 42 54 50 54C58 54 65 48 65 39C65 30 59 24 50 24Z" fill="#f5dcd5"/>
@@ -2183,7 +2725,6 @@
         <div class="couple-card">
           <div class="avatar-frame">
             <div class="avatar-inner">
-              <!-- Stylized Royal Indian Groom Vector -->
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48" fill="#4a0e17"/>
                 <path d="M50 20C41 20 33 26 33 34C33 36 34 40 37 42C37 46 42 52 50 52C58 52 63 46 63 42C66 40 67 36 67 34C67 26 59 20 50 20Z" fill="#ffdf73"/>
@@ -2385,6 +2926,92 @@
   <!-- ========================================================================
        SECTION 7: VENUE & NAVIGATION (EXACT SPECIFICATIONS)
        ======================================================================== -->
+  
+  <!-- ========================================================================
+       SECTION 6.5: SACRED ANAND KARAJ 4 LAAVAN & PUNJABI WEDDING RITUALS
+       ======================================================================== -->
+  <section id="rituals" class="section-ivory" style="border-top: 2px solid var(--color-gold-dark); border-bottom: 2px solid var(--color-gold-dark);">
+    <div class="section-container">
+      <div class="sacred-header">
+        <div class="sacred-shloka" id="rituals-sacred-label">ਸ੍ਰੀ ਅਨੰਦ ਕਾਰਜ ਮਰਯਾਦਾ ਤੇ ਵਿਰਾਸਤ</div>
+      </div>
+      <h2 class="section-title" id="rituals-main-title" style="color: var(--color-royal-maroon);">Sacred Rituals & 4 Laavan</h2>
+      <div class="gold-divider">
+        <div class="gold-divider-line"></div>
+        <span class="gold-divider-icon">☬</span>
+        <div class="gold-divider-line"></div>
+      </div>
+      <p class="section-subtitle" id="rituals-subtitle">Discover the profound spiritual meaning behind the four sacred nuptial hymns and royal Punjabi customs uniting Komal & Rahul.</p>
+
+      <div class="rituals-tab-bar">
+        <button class="rituals-tab-btn active" onclick="switchRitualTab('laavan', this)">
+          ☬ The 4 Sacred Laavan
+        </button>
+        <button class="rituals-tab-btn" onclick="switchRitualTab('customs', this)">
+          ⚜ Punjabi Traditions
+        </button>
+      </div>
+
+      <!-- Tab 1: The 4 Sacred Laavan -->
+      <div id="tab-laavan" class="ritual-cards-grid">
+        <div class="ritual-card">
+          <span class="ritual-step-badge">1st Round • ਪਹਿਲੀ ਲਾਵ</span>
+          <h3 class="ritual-title">Har Pehlari Laav</h3>
+          <p class="ritual-gurmukhi">ਪਹਲੜੀ ਲਾਵ ਪਰਵਿਰਤੀ ਕਰਮੁ ਦ੍ਰਿੜਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥</p>
+          <p class="ritual-meaning"><strong>Foundation of Righteous Life:</strong> The Guru instructs the couple to perform righteous worldly duties, honor the sacred scriptures, and embrace household life anchored in truth, honor, and family values.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">2nd Round • ਦੂਜੀ ਲਾਵ</span>
+          <h3 class="ritual-title">Har Doojari Laav</h3>
+          <p class="ritual-gurmukhi">ਦੂਜੜੀ ਲਾਵ ਸਤਿਗੁਰੁ ਪੁਰਖੁ ਮਿਲਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥</p>
+          <p class="ritual-meaning"><strong>The Meeting of the Soul:</strong> The mind surrenders all lingering ego and egoistic fear. Pure divine love blossoms as the couple gazes inward to find mutual respect, humility, and selfless devotion.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">3rd Round • ਤੀਜੀ ਲਾਵ</span>
+          <h3 class="ritual-title">Har Teejari Laav</h3>
+          <p class="ritual-gurmukhi">ਤੀਜੜੀ ਲਾਵ ਮਨਿ ਚਾਉ ਭਇਆ ਬੈਰਾਗੀਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥</p>
+          <p class="ritual-meaning"><strong>Divine Detachment & Bliss:</strong> The mind fills with spiritual yearning and sublime delight. In the presence of family and community, the couple sings sacred praises and experiences tranquil inner harmony.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">4th Round • ਚੌਥੀ ਲਾਵ</span>
+          <h3 class="ritual-title">Har Chauthari Laav</h3>
+          <p class="ritual-gurmukhi">ਚਉਥੜੀ ਲਾਵ ਮਨਿ ਸਹਜੁ ਭਇਆ ਹਰਿ ਪਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥</p>
+          <p class="ritual-meaning"><strong>Supreme Eternal Union:</strong> The highest spiritual state (Sehaj) is reached. The two individual souls dissolve into one unified divine consciousness, bonded in eternal love and grace.</p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Royal Punjabi Traditions -->
+      <div id="tab-customs" class="ritual-cards-grid" style="display: none;">
+        <div class="ritual-card">
+          <span class="ritual-step-badge">Traditional Welcome</span>
+          <h3 class="ritual-title">The Royal Milni (ਮਿਲਣੀ)</h3>
+          <p class="ritual-meaning">A heartfelt embrace where corresponding elders from both families (fathers, chachas, mamas) meet, hug, and exchange fragrant marigold and rose garlands, symbolizing that two trees are now deeply intertwined into one forest.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">Bridal Adornment</span>
+          <h3 class="ritual-title">Chooda & Kaleere (ਚੂੜਾ ਤੇ ਕਲੀਰੇ)</h3>
+          <p class="ritual-meaning">The bride's maternal uncles adorn her wrists with 21 auspicious red and ivory bangles (Chooda). Sisters and cousins tie umbrella-shaped golden Kaleere, showering blessings of endless wealth, health, and happiness.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">Moonlight Festivity</span>
+          <h3 class="ritual-title">Rangli Jaggo (ਰੰਗਲੀ ਜਾਗੋ)</h3>
+          <p class="ritual-meaning">Illuminated brass pots (Gaggars) topped with flickering oil diyas are carried upon the heads of maternal aunts while dancing to joyful Boliyan and sounding traditional chimtas, inviting the whole town to rejoice.</p>
+        </div>
+
+        <div class="ritual-card">
+          <span class="ritual-step-badge">Playful Banter</span>
+          <h3 class="ritual-title">Joota Chupai (ਜੁੱਤੀ ਛੁਪਾਈ)</h3>
+          <p class="ritual-meaning">The legendary test of wit where the bridesmaids stealthily hide groom Rahul's royal embroidered Mojris and negotiate a cheerful Shagun ransom before letting him leave with his bride!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="venue" class="section-maroon">
     <div class="section-container">
       <div class="sacred-header">
@@ -2443,7 +3070,6 @@
           </a>
         </div>
 
-        <!-- Destination Guide & Weather Note for Late November in Dirba -->
         <div class="destination-guide-box">
           <div class="destination-guide-item">
             <span class="destination-guide-icon">🌤️</span>
@@ -2515,6 +3141,31 @@
         <div class="gallery-item" onclick="openLightbox(5)">
           <img src="https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=800&q=80" alt="Together for eternity" loading="lazy">
           <div class="gallery-overlay">Together Forever · Hand in Hand</div>
+        </div>
+      </div>
+
+      <!-- SECTION 8.5: FUN COUPLE TRIVIA QUIZ -->
+      <div class="quiz-container">
+        <div style="font-size:1.6rem; margin-bottom:8px;">🎯 💫</div>
+        <h3 style="font-family:var(--font-serif); font-size:1.6rem; color:var(--color-gold-bright);">How Well Do You Know Komal & Rahul?</h3>
+        <p style="font-size:0.92rem; color:var(--color-gold-light); margin-bottom:24px;">Test your knowledge about the couple before the big day!</p>
+
+        <div class="quiz-question-box">
+          <div class="quiz-question">1. Who takes longer to get ready for an event?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, true)">Komal (100% true!)</button>
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, false)">Rahul</button>
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, false)">Both equally</button>
+          </div>
+        </div>
+
+        <div class="quiz-question-box">
+          <div class="quiz-question">2. Who is guaranteed to be on the dance floor until 2 AM?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, false)">Komal</button>
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, true)">Rahul (Bhangra King!)</button>
+            <button class="quiz-opt-btn" onclick="checkQuiz(this, false)">The DJ</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2632,9 +3283,13 @@
           <!-- Generated Royal Pass -->
           <div class="royal-pass-card" id="royal-pass-card">
             <div style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-gold-bright);">Official Wedding Guest Pass</div>
-            <h4 style="font-family: var(--font-script); font-size: 2.4rem; color: #fff; margin: 6px 0;" id="pass-guest-name">Valued Guest</h4>
-            <div style="font-size: 0.95rem; color: var(--color-gold-light); margin-bottom: 12px;">Komal Weds Rahul · 25th November 2026</div>
-            <div style="font-size: 0.85rem; color: #eee;">Venue: THE GRAND VILAS, NH-52, Dirba, Punjab 148035</div>
+            <h4 style="font-family: var(--font-script); font-size: 2.6rem; color: #fff; margin: 6px 0;" id="pass-guest-name">Valued Guest</h4>
+            <div style="font-size: 1rem; color: var(--color-gold-light); margin-bottom: 12px;">Komal Weds Rahul · 25th November 2026</div>
+            <div style="font-size: 0.88rem; color: #eee; margin-bottom:15px;">Venue: THE GRAND VILAS, NH-52, Dirba, Punjab 148035</div>
+            
+            <button onclick="downloadCustomECard()" class="btn-gold-primary" style="padding:10px 24px; font-size:0.88rem;">
+              📥 Download E-Card to Gallery
+            </button>
           </div>
         </div>
       </div>
@@ -2667,10 +3322,15 @@
           </div>
           <button type="submit" class="btn-gold-primary" style="padding: 14px 30px; width: 100%;">Post Blessing to Wall</button>
         </form>
+        <div style="text-align: center; margin-top: 14px;">
+          <button type="button" class="btn-gold-secondary" onclick="openShagunModal()" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>🧧</span>
+            <span>Bestow Virtual Shagun Lifafa (ਸ਼ਗਨ ਭੇਜੋ)</span>
+          </button>
+        </div>
       </div>
 
       <div class="wishes-wall" id="wishes-wall">
-        <!-- Sample Wishes -->
         <div class="wish-card">
           <p class="wish-text">"Wishing dearest Komal and Rahul a lifetime of boundless joy, mutual respect, and prosperity. May Waheguru shower your union with unending grace!"</p>
           <div class="wish-author">— Uncle & Aunty Garg, Patiala</div>
@@ -2773,7 +3433,7 @@
       
       <div class="footer-hashtag">#KomalWedsRahul</div>
 
-      <!-- Add to Calendar Button (Downloads complete .ics calendar file) -->
+      <!-- Add to Calendar & Download Card Buttons -->
       <div class="footer-calendar-btn">
         <button onclick="downloadCalendarEvent()" class="btn-gold-primary">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2783,6 +3443,15 @@
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
           Add to Calendar (.ics)
+        </button>
+
+        <button onclick="downloadCustomECard()" class="btn-gold-outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download E-Card (Image)
         </button>
       </div>
 
@@ -2820,36 +3489,90 @@
     };
 
     /* ==========================================================================
-       2. WEB AUDIO API SYNTHESIZER (FALLBACK ROYAL CHIMES & CHORD)
+       2. WEB AUDIO API SYNTHESIZER: ROYAL CHIMES & REALISTIC PUNJABI DHOL BEAT
        ========================================================================== */
     let audioCtx = null;
+    function getAudioContext() {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return null;
+      if (!audioCtx) audioCtx = new AudioContext();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
+
     function playRoyalChimes() {
       try {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        audioCtx = audioCtx || new AudioContext();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-
-        // Auspicious pentatonic chime notes (C, E, G, B, D)
+        const ctx = getAudioContext();
+        if (!ctx) return;
         const notes = [261.63, 329.63, 392.00, 493.88, 587.33, 783.99];
         notes.forEach((freq, idx) => {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
           osc.type = 'triangle';
-          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.12);
+          osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.12);
           
-          gain.gain.setValueAtTime(0, audioCtx.currentTime + idx * 0.12);
-          gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + idx * 0.12 + 0.05);
-          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + idx * 0.12 + 1.2);
+          gain.gain.setValueAtTime(0, ctx.currentTime + idx * 0.12);
+          gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + idx * 0.12 + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.12 + 1.2);
 
           osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(audioCtx.currentTime + idx * 0.12);
-          osc.stop(audioCtx.currentTime + idx * 0.12 + 1.25);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + idx * 0.12);
+          osc.stop(ctx.currentTime + idx * 0.12 + 1.25);
         });
       } catch (err) {
         console.log("Synthesizer bypassed:", err);
       }
+    }
+
+    // Interactive Punjabi Dhol Drummer Synth (Plays authentic Dha-Dhin-Ta beat!)
+    function playPunjabiDholBeat() {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        if (navigator.vibrate) navigator.vibrate([30, 40, 60, 40, 80]);
+
+        // Deep Bass Thump (Dha)
+        const bassOsc = ctx.createOscillator();
+        const bassGain = ctx.createGain();
+        bassOsc.type = 'sine';
+        bassOsc.frequency.setValueAtTime(140, ctx.currentTime);
+        bassOsc.frequency.exponentialRampToValueAtTime(45, ctx.currentTime + 0.28);
+        bassGain.gain.setValueAtTime(0.8, ctx.currentTime);
+        bassGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+        bassOsc.connect(bassGain);
+        bassGain.connect(ctx.destination);
+        bassOsc.start(ctx.currentTime);
+        bassOsc.stop(ctx.currentTime + 0.36);
+
+        // Treble Snap (Tin/Ta) on 0.15s offset
+        const trebleOsc = ctx.createOscillator();
+        const trebleGain = ctx.createGain();
+        trebleOsc.type = 'triangle';
+        trebleOsc.frequency.setValueAtTime(450, ctx.currentTime + 0.15);
+        trebleOsc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.3);
+        trebleGain.gain.setValueAtTime(0.5, ctx.currentTime + 0.15);
+        trebleGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.32);
+        trebleOsc.connect(trebleGain);
+        trebleGain.connect(ctx.destination);
+        trebleOsc.start(ctx.currentTime + 0.15);
+        trebleOsc.stop(ctx.currentTime + 0.33);
+
+      } catch (err) {
+        console.log("Dhol synth error:", err);
+      }
+    }
+
+    const dholBtn = document.getElementById('dhol-beat-btn');
+    if (dholBtn) {
+      dholBtn.addEventListener('click', () => {
+        playPunjabiDholBeat();
+        dholBtn.style.transform = 'scale(1.25) rotate(15deg)';
+        setTimeout(() => {
+          dholBtn.style.transform = '';
+        }, 250);
+      });
     }
 
     /* ==========================================================================
@@ -2893,27 +3616,17 @@
     function openPalaceInvitation(e) {
       if (splash.classList.contains('opened')) return;
 
-      // Haptic Feedback on supported phones
-      if (navigator.vibrate) {
-        navigator.vibrate([40, 60, 40]);
-      }
+      if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
 
-      // Coordinates for particle burst
       const rect = sealTrigger.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
       createParticleExplosion(cx, cy);
 
-      // Play auspicious chimes
       playRoyalChimes();
 
-      // Open doors
       splash.classList.add('opened');
-      
-      // Attempt gentle audio playback
       playMusic();
-
-      // Trigger hero petals
       startPetals();
     }
 
@@ -2924,7 +3637,6 @@
       }
     });
 
-    // Music Player Controls
     function playMusic() {
       audio.play().then(() => {
         isMusicPlaying = true;
@@ -2949,7 +3661,37 @@
     });
 
     /* ==========================================================================
-       4. LIVE COUNTDOWN TIMER
+       4. PERSONALIZED GUEST FARMAN (URL PARAMETERS & CUSTOMIZER)
+       ========================================================================== */
+    function checkUrlGuestParam() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get('guest');
+      if (guestName) {
+        setGuestName(guestName);
+      }
+    }
+
+    function setGuestName(name) {
+      const cleanName = decodeURIComponent(name).replace(/\+/g, ' ').trim();
+      if (!cleanName) return;
+      document.getElementById('farman-display-name').innerText = cleanName;
+      document.getElementById('guest-name').value = cleanName;
+      document.getElementById('pass-guest-name').innerText = cleanName;
+    }
+
+    function personalizeInvitation() {
+      const input = document.getElementById('farman-input-name');
+      const val = input.value.trim();
+      if (!val) return;
+      setGuestName(val);
+      playRoyalChimes();
+      alert(`✨ Your royal invitation has been personalized for: ${val}!`);
+    }
+
+    window.addEventListener('DOMContentLoaded', checkUrlGuestParam);
+
+    /* ==========================================================================
+       5. LIVE COUNTDOWN TIMER
        ========================================================================== */
     function updateCountdown() {
       const targetDate = new Date(WEDDING_CONFIG.countdownTarget).getTime();
@@ -2984,7 +3726,28 @@
     updateCountdown();
 
     /* ==========================================================================
-       5. HERO ROSE PETALS & GOLD SPARKLES CANVAS ANIMATION
+       6. SACRED DIYA LIGHTING CEREMONY INTERACTION
+       ========================================================================== */
+    let diyasLitCount = 524;
+    const diyaTrigger = document.getElementById('sacred-diya-trigger');
+    const diyaFlame = document.getElementById('diya-flame-element');
+    const diyaCountText = document.getElementById('diya-counter-number');
+
+    diyaTrigger.addEventListener('click', () => {
+      diyasLitCount++;
+      diyaCountText.innerText = diyasLitCount;
+      diyaFlame.classList.remove('unlit');
+      playRoyalChimes();
+
+      if (navigator.vibrate) navigator.vibrate([40, 40]);
+
+      // Burst of sparkles around diya
+      const rect = diyaTrigger.getBoundingClientRect();
+      createParticleExplosion(rect.left + rect.width / 2, rect.top + 20);
+    });
+
+    /* ==========================================================================
+       7. HERO ROSE PETALS & GOLD SPARKLES CANVAS ANIMATION
        ========================================================================== */
     const canvas = document.getElementById('petals-canvas');
     const ctx = canvas.getContext('2d');
@@ -3051,14 +3814,13 @@
     startPetals();
 
     /* ==========================================================================
-       6. INTERACTIVE FLOWER SHOWER (SHAGUN EFFECT)
+       8. FLOWER SHOWER (SHAGUN EFFECT)
        ========================================================================== */
     const flowerShowerBtn = document.getElementById('btn-flower-shower');
     flowerShowerBtn.addEventListener('click', () => {
       if (navigator.vibrate) navigator.vibrate(30);
       playRoyalChimes();
 
-      // Rain 50 petals from top
       for (let i = 0; i < 45; i++) {
         const p = document.createElement('div');
         p.className = 'burst-particle';
@@ -3087,7 +3849,7 @@
     });
 
     /* ==========================================================================
-       7. PHOTO GALLERY LIGHTBOX & MOBILE SWIPE SUPPORT
+       9. PHOTO GALLERY LIGHTBOX & MOBILE SWIPE SUPPORT
        ========================================================================== */
     const galleryImages = [
       { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", caption: "Pre-Wedding Elegance · Komal & Rahul" },
@@ -3131,7 +3893,6 @@
       updateLightboxContent();
     }
 
-    // Touch Swipe Detection on Mobile
     let touchStartX = 0;
     let touchEndX = 0;
     lightboxModal.addEventListener('touchstart', (e) => {
@@ -3143,7 +3904,6 @@
       if (touchEndX > touchStartX + 50) prevLightbox();
     }, false);
 
-    // Keyboard navigation
     window.addEventListener('keydown', (e) => {
       if (!lightboxModal.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
@@ -3152,7 +3912,21 @@
     });
 
     /* ==========================================================================
-       8. RSVP FORM SUBMISSION VIA WHATSAPP (NO BACKEND NEEDED)
+       10. COUPLE TRIVIA QUIZ
+       ========================================================================== */
+    function checkQuiz(btn, isCorrect) {
+      if (isCorrect) {
+        btn.classList.add('correct');
+        btn.innerText = "✓ You got it right! 🎉";
+        playRoyalChimes();
+      } else {
+        btn.style.opacity = '0.5';
+        btn.innerText = "Nice try! 😉";
+      }
+    }
+
+    /* ==========================================================================
+       11. RSVP FORM SUBMISSION VIA WHATSAPP
        ========================================================================== */
     function handleRsvpSubmit(e) {
       e.preventDefault();
@@ -3170,7 +3944,6 @@
         return;
       }
 
-      // Pre-filled WhatsApp message
       const text = `*ROYAL WEDDING RSVP: KOMAL WEDS RAHUL* 💍%0A` +
         `• *Guest Name:* ${encodeURIComponent(name)}%0A` +
         `• *Attendance:* ${encodeURIComponent(attendance)}%0A` +
@@ -3182,19 +3955,117 @@
 
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${WEDDING_CONFIG.rsvpWhatsAppNumber}&text=${text}`;
 
-      // Update in-page Royal Pass with guest name
       document.getElementById('pass-guest-name').innerText = name;
       document.getElementById('rsvp-form').style.display = 'none';
       document.getElementById('rsvp-success').style.display = 'block';
 
-      // Open WhatsApp in new tab
       setTimeout(() => {
         window.open(whatsappUrl, '_blank');
       }, 750);
     }
 
     /* ==========================================================================
-       9. SANGEET SONG SUGGESTION WIDGET
+       12. DOWNLOAD CUSTOM ROYAL E-CARD IMAGE (HTML5 CANVAS RENDERER)
+       ========================================================================== */
+    function downloadCustomECard() {
+      const c = document.getElementById('invitation-card-canvas');
+      const cx = c.getContext('2d');
+      const guestName = document.getElementById('pass-guest-name').innerText || "Valued Guest";
+
+      // Background Royal Deep Velvet
+      cx.fillStyle = "#250409";
+      cx.fillRect(0, 0, 1080, 1350);
+
+      // Gold Foil Border
+      cx.strokeStyle = "#d4af37";
+      cx.lineWidth = 14;
+      cx.strokeRect(30, 30, 1020, 1290);
+
+      // Inner dashed border
+      cx.strokeStyle = "#ffdf73";
+      cx.lineWidth = 3;
+      cx.setLineDash([12, 10]);
+      cx.strokeRect(55, 55, 970, 1240);
+      cx.setLineDash([]);
+
+      // Top Sacred Symbol
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 60px 'Cormorant Garamond', serif";
+      cx.textAlign = "center";
+      cx.fillText("ੴ", 540, 160);
+
+      cx.font = "bold 32px 'Cormorant Garamond', serif";
+      cx.fillText("॥ SHREE GANESHAY NAMAH ॥", 540, 220);
+
+      // Subtitle
+      cx.fillStyle = "#fff3ce";
+      cx.font = "30px 'Poppins', sans-serif";
+      cx.fillText("TOGETHER WITH THEIR FAMILIES", 540, 300);
+      cx.fillText("INVITE YOU TO CELEBRATE THE WEDDING OF", 540, 345);
+
+      // Couple Names
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 130px 'Great Vibes', cursive";
+      cx.fillText("Komal  ♥  Rahul", 540, 500);
+
+      // Decorative Line
+      cx.strokeStyle = "#d4af37";
+      cx.lineWidth = 4;
+      cx.beginPath();
+      cx.moveTo(250, 560);
+      cx.lineTo(830, 560);
+      cx.stroke();
+
+      // Guest Name
+      cx.fillStyle = "#fff";
+      cx.font = "italic 36px 'Cormorant Garamond', serif";
+      cx.fillText("Specially Invited Guest:", 540, 640);
+
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 58px 'Playfair Display', serif";
+      cx.fillText(guestName, 540, 710);
+
+      // Date & Venue Details Box
+      cx.fillStyle = "rgba(74, 14, 23, 0.9)";
+      cx.fillRect(150, 780, 780, 320);
+      cx.strokeStyle = "#d4af37";
+      cx.lineWidth = 3;
+      cx.strokeRect(150, 780, 780, 320);
+
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 44px 'Playfair Display', serif";
+      cx.fillText("Wednesday, 25th November 2026", 540, 850);
+
+      cx.fillStyle = "#fff3ce";
+      cx.font = "34px 'Poppins', sans-serif";
+      cx.fillText("Anand Karaj & Pheras · 11:00 AM Onwards", 540, 910);
+
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 40px 'Cinzel Decorative', serif";
+      cx.fillText("THE GRAND VILAS", 540, 990);
+
+      cx.fillStyle = "#fff";
+      cx.font = "28px 'Poppins', sans-serif";
+      cx.fillText("NH-52, Dirba - Sangrur Rd, Dirba, Punjab 148035", 540, 1045);
+
+      // Footer Hashtag
+      cx.fillStyle = "#ffdf73";
+      cx.font = "bold 36px 'Playfair Display', serif";
+      cx.fillText("#KomalWedsRahul", 540, 1180);
+
+      cx.fillStyle = "#fff3ce";
+      cx.font = "24px 'Poppins', sans-serif";
+      cx.fillText("WITH LOVE & BLESSINGS FROM BOTH FAMILIES", 540, 1225);
+
+      // Convert to Image and Trigger Download
+      const link = document.createElement('a');
+      link.download = `Komal_Weds_Rahul_Invitation_${guestName.replace(/[^a-zA-Z0-9]/g, '_')}.png`;
+      link.href = c.toDataURL("image/png");
+      link.click();
+    }
+
+    /* ==========================================================================
+       13. SANGEET SONG SUGGESTION WIDGET
        ========================================================================== */
     function addSangeetSong() {
       const input = document.getElementById('sangeet-song-input');
@@ -3210,7 +4081,7 @@
     }
 
     /* ==========================================================================
-       10. GUESTBOOK / WISHES WALL
+       14. GUESTBOOK / WISHES WALL
        ========================================================================== */
     function handleWishSubmit(e) {
       e.preventDefault();
@@ -3238,7 +4109,7 @@
     }
 
     /* ==========================================================================
-       11. ADD SINGLE OR MAIN EVENT TO CALENDAR (.ICS FILE DOWNLOAD)
+       15. ADD SINGLE OR MAIN EVENT TO CALENDAR (.ICS FILE DOWNLOAD)
        ========================================================================== */
     function downloadCalendarEvent() {
       addSingleEventToCalendar(
@@ -3278,7 +4149,7 @@ END:VCALENDAR`;
     }
 
     /* ==========================================================================
-       12. SHARE INVITATION (WEB SHARE API + WHATSAPP FALLBACK)
+       16. SHARE INVITATION (WEB SHARE API + WHATSAPP FALLBACK)
        ========================================================================== */
     const shareBtn = document.getElementById('share-invite-btn');
     shareBtn.addEventListener('click', async () => {
@@ -3301,7 +4172,7 @@ END:VCALENDAR`;
     });
 
     /* ==========================================================================
-       13. STICKY NAVBAR & MOBILE MENU TOGGLE
+       17. STICKY NAVBAR & MOBILE MENU TOGGLE
        ========================================================================== */
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('nav-toggle');
@@ -3326,7 +4197,7 @@ END:VCALENDAR`;
     });
 
     /* ==========================================================================
-       14. GOLDEN SPARKLE MOUSE TRAIL (DESKTOP ONLY)
+       18. GOLDEN SPARKLE MOUSE TRAIL
        ========================================================================== */
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       let lastSparkleTime = 0;
@@ -3349,6 +4220,300 @@ END:VCALENDAR`;
         setTimeout(() => sparkle.remove(), 850);
       });
     }
+  
+    /* ==========================================================================
+       19. SACRED RITUALS TAB CONTROLLER
+       ========================================================================== */
+    function switchRitualTab(tabName, btn) {
+      document.querySelectorAll('.rituals-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const laavanTab = document.getElementById('tab-laavan');
+      const customsTab = document.getElementById('tab-customs');
+      if (tabName === 'laavan') {
+        laavanTab.style.display = 'grid';
+        customsTab.style.display = 'none';
+      } else {
+        laavanTab.style.display = 'none';
+        customsTab.style.display = 'grid';
+      }
+    }
+
+    /* ==========================================================================
+       20. TRADITIONAL VIRTUAL SHAGUN LIFAFA ENGINE
+       ========================================================================== */
+    let currentShagunAmount = 1101;
+    let currentShagunStamp = 'ੴ';
+
+    function openShagunModal() {
+      const modal = document.getElementById('shagun-modal');
+      modal.classList.add('active');
+      playRoyalChimes();
+    }
+
+    function closeShagunModal() {
+      const modal = document.getElementById('shagun-modal');
+      modal.classList.remove('active');
+    }
+
+    function setShagunAmount(amt, btn) {
+      currentShagunAmount = amt;
+      document.querySelectorAll('.shagun-amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('selected-shagun-label').innerText = `Auspicious ₹${amt.toLocaleString('en-IN')} Shagun`;
+    }
+
+    function setShagunCustom(btn) {
+      const custom = prompt("Enter custom auspicious Shagun amount (e.g. 2501, 11000):", "2501");
+      if (custom && !isNaN(parseInt(custom))) {
+        setShagunAmount(parseInt(custom), btn);
+      }
+    }
+
+    function setShagunStamp(stamp, btn) {
+      currentShagunStamp = stamp;
+      document.querySelectorAll('.shagun-stamp-opt').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('shagun-stamp-preview').innerText = stamp;
+    }
+
+    function sealAndSendShagun() {
+      const sender = document.getElementById('shagun-sender-name').value.trim() || 'Well-Wishing Family';
+      const msg = document.getElementById('shagun-message-text').value.trim() || 'Warmest congratulations and heartfelt blessings to Komal & Rahul on your holy union!';
+
+      playPunjabiDholBeat();
+      triggerFlowerShower();
+
+      // Create Shagun card on Wishes wall
+      const wall = document.getElementById('wishes-wall');
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+      card.style.border = '2px solid #ffd700';
+      card.style.background = 'linear-gradient(135deg, #fffdf7, #fff6dd)';
+      card.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="background:#7a1523; color:#ffd700; padding:4px 12px; border-radius:20px; font-weight:800; font-size:0.85rem;">
+            🧧 Shagun: ₹${currentShagunAmount.toLocaleString('en-IN')} ${currentShagunStamp}
+          </span>
+          <span style="font-size:0.8rem; color:#888;">Just now</span>
+        </div>
+        <p class="wish-text">"${msg}"</p>
+        <div class="wish-author">— ${sender}</div>
+      `;
+      wall.insertBefore(card, wall.firstChild);
+
+      alert(`🧧 Shagun of ₹${currentShagunAmount.toLocaleString('en-IN')} successfully bestowed upon Komal & Rahul! May God bless you abundantly.`);
+      closeShagunModal();
+
+      // Pre-fill WhatsApp share
+      const shareText = encodeURIComponent(`🧧 I have bestowed a virtual Shagun of ₹${currentShagunAmount.toLocaleString('en-IN')} (${currentShagunStamp}) and warm blessings for the wedding of Komal & Rahul! View invitation: https://rahulgarg55.github.io/komal-weds-rahul/`);
+      window.open(`https://api.whatsapp.com/send?text=${shareText}`, '_blank');
+    }
+
+    /* ==========================================================================
+       21. MULTI-MODE PUNJABI DHOL & SHEHNAI SYNTHESIZER
+       ========================================================================== */
+    let dholMode = 0; // 0: Dhol Beat, 1: Fast Bhangra Roll, 2: Royal Shehnai Taan
+
+    function playFastBhangraRoll() {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      if (navigator.vibrate) navigator.vibrate([20, 20, 20, 20, 50, 40, 100]);
+      
+      for (let i = 0; i < 6; i++) {
+        const time = ctx.currentTime + i * 0.08;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(240 - i * 15, time);
+        gain.gain.setValueAtTime(0.25, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.06);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(time);
+        osc.stop(time + 0.07);
+      }
+      // Big final Dha
+      setTimeout(() => playPunjabiDholBeat(), 480);
+    }
+
+    function playShehnaiTaan() {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      // Authentic Raag Bilawal Shehnai Ornamentation (Sa-Re-Ga-Pa-Dha-Sa)
+      const freqs = [587.33, 659.25, 739.99, 880.00, 987.77, 1174.66];
+      freqs.forEach((f, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth'; // rich nasal reed timbre of Shehnai
+        const t = ctx.currentTime + idx * 0.14;
+        osc.frequency.setValueAtTime(f, t);
+        osc.frequency.linearRampToValueAtTime(f * 1.03, t + 0.12);
+        gain.gain.setValueAtTime(0.01, t);
+        gain.gain.linearRampToValueAtTime(0.12, t + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.22);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.23);
+      });
+    }
+
+    // Connect rhythm selector to Dhol Button
+    const dholRhythmElem = document.getElementById('dhol-beat-btn');
+    if (dholRhythmElem) {
+      dholRhythmElem.onclick = () => {
+        dholMode = (dholMode + 1) % 3;
+        if (dholMode === 0) {
+          playPunjabiDholBeat();
+          dholRhythmElem.title = "Mode: Classic Dhol Beat (Tap to change)";
+        } else if (dholMode === 1) {
+          playFastBhangraRoll();
+          dholRhythmElem.title = "Mode: Fast Bhangra Roll (Tap to change)";
+        } else {
+          playShehnaiTaan();
+          dholRhythmElem.title = "Mode: Auspicious Shehnai Taan (Tap to change)";
+        }
+      };
+    }
+
+    /* ==========================================================================
+       22. BILINGUAL LANGUAGE ENGINE (ਗੁਰਮੁਖੀ ਪੰਜਾਬੀ ↔ ENGLISH)
+       ========================================================================== */
+    let currentLang = 'en';
+
+    const translations = {
+      en: {
+        navHome: "Home",
+        navCountdown: "Countdown",
+        navDiya: "Light Diya",
+        navStory: "Our Story",
+        navCouple: "The Couple",
+        navEvents: "Events",
+        navRituals: "Rituals & 4 Laavan",
+        navVenue: "Venue",
+        navGallery: "Gallery",
+        navRsvp: "RSVP",
+        navWishes: "Wishes",
+        langBtn: "ੴ ਪੰਜਾਬੀ",
+        invitationSubtitle: "Together with their families, cordially invite you to celebrate their wedding",
+        countdownTitle: "Counting Down to Forever",
+        diyaTitle: "🪔 Sacred Diya Lighting Ceremony",
+        diyaSubtitle: "Tap the traditional brass diya below to bestow your warm light and blessings upon Komal & Rahul."
+      },
+      pa: {
+        navHome: "ਮੁੱਖ ਪੰਨਾ",
+        navCountdown: "ਉਡੀਕ ਦੇ ਪਲ",
+        navDiya: "ਜੋਤ ਜਗਾਓ",
+        navStory: "ਪ੍ਰੇਮ ਕਹਾਣੀ",
+        navCouple: "ਜੋੜੀ",
+        navEvents: "ਸਮਾਗਮ",
+        navRituals: "੪ ਲਾਵਾਂ ਤੇ ਰਸਮਾਂ",
+        navVenue: "ਸਥਾਨ",
+        navGallery: "ਯਾਦਾਂ",
+        navRsvp: "ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ",
+        navWishes: "ਸ਼ੁਭਕਾਮਨਾਵਾਂ",
+        langBtn: "🇬🇧 English",
+        invitationSubtitle: "ਸਮੂਹ ਪਰਿਵਾਰ ਵੱਲੋਂ ਆਪ ਜੀ ਨੂੰ ਦੋਹਾਂ ਪਰਿਵਾਰਾਂ ਦੇ ਸ਼ੁਭ ਵਿਆਹ ਸਮਾਗਮ ਵਿੱਚ ਸ਼ਾਮਿਲ ਹੋਣ ਦਾ ਦਿਲੀ ਸੱਦਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ",
+        countdownTitle: "ਸ਼ੁਭ ਘੜੀ ਦੀ ਉਡੀਕ",
+        diyaTitle: "🪔 ਪਵਿੱਤਰ ਜੋਤ ਜਗਾਓ",
+        diyaSubtitle: "ਹੇਠਾਂ ਦਿੱਤੀ ਰਵਾਇਤੀ ਪਿੱਤਲ ਦੀ ਜੋਤ ਨੂੰ ਛੂਹ ਕੇ ਕੋਮਲ ਅਤੇ ਰਾਹੁਲ ਨੂੰ ਆਪਣੀਆਂ ਦਿਲੀ ਅਸੀਸਾਂ ਬਖਸ਼ੋ।"
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'pa' : 'en';
+      const dict = translations[currentLang];
+
+      const navBtn = document.getElementById('lang-toggle-nav');
+      if (navBtn) navBtn.innerHTML = `<span>${dict.langBtn}</span>`;
+
+      // Update Subtitles and Headings
+      const coupleSub = document.querySelector('.couple-subtitle');
+      if (coupleSub) coupleSub.innerText = dict.invitationSubtitle;
+
+      const cdTitle = document.querySelector('#countdown .section-title');
+      if (cdTitle) cdTitle.innerText = dict.countdownTitle;
+
+      const diyaHead = document.querySelector('#diya-section h3');
+      if (diyaHead) diyaHead.innerText = dict.diyaTitle;
+
+      const diyaSub = document.querySelector('#diya-section p');
+      if (diyaSub) diyaSub.innerText = dict.diyaSubtitle;
+
+      // Update timer labels
+      const labels = document.querySelectorAll('.timer-label');
+      if (labels.length >= 4) {
+        if (currentLang === 'pa') {
+          labels[0].innerText = "ਦਿਨ";
+          labels[1].innerText = "ਘੰਟੇ";
+          labels[2].innerText = "ਮਿੰਟ";
+          labels[3].innerText = "ਸਕਿੰਟ";
+        } else {
+          labels[0].innerText = "Days";
+          labels[1].innerText = "Hours";
+          labels[2].innerText = "Minutes";
+          labels[3].innerText = "Seconds";
+        }
+      }
+
+      playRoyalChimes();
+    }
+
   </script>
+
+  <!-- ========================================================================
+       ROYAL VIRTUAL SHAGUN LIFAFA MODAL (TRADITIONAL AUSPICIOUS BLESSING)
+       ======================================================================== -->
+  <div class="shagun-modal-overlay" id="shagun-modal">
+    <div class="shagun-modal-card">
+      <button class="shagun-close-btn" onclick="closeShagunModal()" aria-label="Close modal">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 12px;">
+        <span style="color: var(--color-gold); font-size: 1.8rem;">🧧</span>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--color-gold-light); margin: 6px 0;">Traditional Shagun Lifafa</h3>
+        <p style="font-size: 0.85rem; color: #ffdfa9;">ਸ਼ਗਨ ਦਾ ਲਿਫ਼ਾਫ਼ਾ • Auspicious Wedding Blessing</p>
+      </div>
+
+      <div class="shagun-envelope-visual">
+        <div class="shagun-coin-badge">
+          <span>🪙</span>
+          <span id="selected-shagun-label">Auspicious ₹1,101 Shagun</span>
+        </div>
+        <p style="font-size: 0.82rem; color: #ffdfa9; margin: 0;">In Indian culture, the <strong>+₹1 coin</strong> symbolizes unending abundance, eternal prosperity, and love that never finishes.</p>
+        <div id="shagun-stamp-preview" style="font-size: 2.2rem; color: #ffd700; margin-top: 10px;">ੴ</div>
+      </div>
+
+      <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 8px; color: var(--color-gold);">Select Auspicious Shagun:</div>
+      <div class="shagun-amount-grid">
+        <button class="shagun-amount-btn" onclick="setShagunAmount(101, this)">₹101</button>
+        <button class="shagun-amount-btn" onclick="setShagunAmount(501, this)">₹501</button>
+        <button class="shagun-amount-btn active" onclick="setShagunAmount(1101, this)">₹1,101</button>
+        <button class="shagun-amount-btn" onclick="setShagunAmount(2101, this)">₹2,101</button>
+        <button class="shagun-amount-btn" onclick="setShagunAmount(5101, this)">₹5,101</button>
+        <button class="shagun-amount-btn" onclick="setShagunCustom(this)">Custom</button>
+      </div>
+
+      <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--color-gold);">Select Auspicious Seal:</div>
+      <div class="shagun-stamp-picker">
+        <button class="shagun-stamp-opt active" onclick="setShagunStamp('ੴ', this)">ੴ</button>
+        <button class="shagun-stamp-opt" onclick="setShagunStamp('☬', this)">☬</button>
+        <button class="shagun-stamp-opt" onclick="setShagunStamp('🪷', this)">🪷</button>
+        <button class="shagun-stamp-opt" onclick="setShagunStamp('🦚', this)">🦚</button>
+        <button class="shagun-stamp-opt" onclick="setShagunStamp('⚜', this)">⚜</button>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <input type="text" id="shagun-sender-name" class="form-control" placeholder="Your Family / Sender Name" style="background: rgba(0,0,0,0.3); color: #fff; border: 1px solid var(--color-gold-dark);">
+      </div>
+      <div class="form-group">
+        <input type="text" id="shagun-message-text" class="form-control" placeholder="Auspicious Blessing (e.g. May Waheguru shower unlimited happiness!)" style="background: rgba(0,0,0,0.3); color: #fff; border: 1px solid var(--color-gold-dark);">
+      </div>
+
+      <button type="button" class="btn-gold-primary" onclick="sealAndSendShagun()" style="width: 100%; padding: 14px; margin-top: 10px; font-weight: 700;">
+        ✉️ Seal & Bestow Shagun Blessings
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>
