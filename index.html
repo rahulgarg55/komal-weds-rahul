@@ -133,9 +133,10 @@
       background: var(--gold-foil);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
       background-size: 200% auto;
       animation: goldShimmer 5s linear infinite;
-      display: inline-block;
+      display: block;
     }
 
     @keyframes goldShimmer {
@@ -826,10 +827,13 @@
 
     .hero-couple-names {
       font-family: var(--font-script);
-      font-size: clamp(3.8rem, 10vw, 6.8rem);
-      line-height: 1.15;
+      font-size: clamp(2.6rem, 8vw, 6rem);
+      line-height: 1.2;
       margin: 15px 0 25px 0;
       filter: drop-shadow(0 5px 20px rgba(0,0,0,0.9));
+      width: 100%;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     .hero-heart {
@@ -2362,9 +2366,176 @@
       color: #2b0408;
     }
 
+  
+    /* Hero Names Stacked Layout — never clip */
+    .hero-name-line {
+      display: block;
+    }
+    .hero-heart-separator {
+      display: block;
+      font-size: 0.4em;
+      line-height: 1;
+      margin: -4px 0;
+      -webkit-text-fill-color: #e53935;
+    }
+
+    /* Jharokha frame — let names breathe */
+    .hero-jharokha-frame {
+      overflow: visible !important;
+    }
+
+
+    /* Override section overflow for hero so names never clip */
+    #hero {
+      overflow: visible;
+    }
+    #hero .hero-jharokha-frame {
+      overflow: visible;
+    }
+
+
+    @media (max-width: 480px) {
+      .hero-couple-names {
+        font-size: clamp(2.2rem, 12vw, 3.2rem);
+        margin: 10px 0 18px 0;
+      }
+      .hero-jharokha-frame {
+        padding: 32px 14px !important;
+        margin: 0 8px;
+      }
+      .hero-invitation-line {
+        font-size: 0.88rem !important;
+        letter-spacing: 1.5px !important;
+      }
+      .hero-date-badge {
+        padding: 14px 24px !important;
+      }
+      .hero-date-short {
+        font-size: 1.35rem !important;
+        letter-spacing: 3px !important;
+      }
+      .hero-mascot-row {
+        gap: 12px;
+      }
+      .royal-mascot-elephant {
+        width: 40px;
+        height: 40px;
+      }
+      .hero-sacred-invocations {
+        font-size: 0.72rem !important;
+      }
+      .royal-farman-wrapper {
+        padding: 16px 14px !important;
+      }
+      .farman-guest-name {
+        font-size: 1.3rem !important;
+      }
+      .section-title {
+        font-size: 1.6rem !important;
+      }
+      .countdown-grid {
+        gap: 10px !important;
+      }
+      .timer-number {
+        font-size: 2rem !important;
+      }
+      .floating-tools {
+        gap: 8px !important;
+      }
+      .tool-btn {
+        width: 40px !important;
+        height: 40px !important;
+      }
+      .flower-shower-btn {
+        font-size: 0.78rem !important;
+        padding: 8px 14px !important;
+      }
+      .rituals-tab-bar {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .ritual-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .nav-links {
+        padding: 16px !important;
+        gap: 12px !important;
+      }
+      .lang-toggle-btn {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-couple-names {
+        font-size: 2rem;
+      }
+      .hero-jharokha-frame {
+        padding: 28px 10px !important;
+        margin: 0 4px;
+      }
+    }
+
+  
+    /* Scroll Progress Bar */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-gold), #ff6b6b, var(--color-gold-bright));
+      z-index: 100001;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* Better entrance animations */
+    .reveal-element {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), 
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-element.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-element:nth-child(2) { transition-delay: 0.08s; }
+    .reveal-element:nth-child(3) { transition-delay: 0.16s; }
+    .reveal-element:nth-child(4) { transition-delay: 0.24s; }
+
+    /* Smooth section divider ornament */
+    .section-ornament-divider {
+      text-align: center;
+      padding: 0;
+      margin: -1px 0;
+      font-size: 1.8rem;
+      color: var(--color-gold);
+      letter-spacing: 12px;
+      background: linear-gradient(90deg, transparent 10%, rgba(212,175,55,0.15) 50%, transparent 90%);
+      line-height: 2.8;
+    }
+
+    /* Floating action button pulse */
+    .flower-shower-btn {
+      animation: gentlePulse 3s ease-in-out infinite;
+    }
+    @keyframes gentlePulse {
+      0%, 100% { box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+      50% { box-shadow: 0 6px 30px rgba(212,175,55,0.7), 0 0 15px rgba(255,215,0,0.3); }
+    }
+
+    /* Active nav link highlight */
+    .nav-links a.active-link {
+      color: var(--color-gold-bright) !important;
+      text-shadow: 0 0 8px rgba(212,175,55,0.5);
+    }
+
   </style>
 </head>
 <body>
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
 
   <!-- ========================================================================
        SECTION 1: OPENING SPLASH: ROYAL PALACE DOORS & 3D WAX SEAL
@@ -2513,7 +2684,9 @@
       <p class="hero-invitation-line">Together with their families, joyfully invite you to celebrate the wedding of</p>
       
       <h1 class="hero-couple-names gold-foil-text">
-        Komal <span class="hero-heart">♥</span> Rahul
+        <span class="hero-name-line">Komal</span>
+        <span class="hero-heart-separator"><span class="hero-heart">♥</span></span>
+        <span class="hero-name-line">Rahul</span>
       </h1>
 
       <div class="hero-date-badge">
@@ -4458,6 +4631,58 @@ END:VCALENDAR`;
 
       playRoyalChimes();
     }
+
+  
+    /* ==========================================================================
+       23. SCROLL PROGRESS BAR
+       ========================================================================== */
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = scrollPercent + '%';
+      }, { passive: true });
+    }
+
+    /* ==========================================================================
+       24. INTERSECTION OBSERVER FOR SMOOTH SECTION REVEALS
+       ========================================================================== */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section-container, .ritual-card, .timeline-card, .couple-card, .event-card-inner, .wish-card, .quiz-question-box').forEach(el => {
+      el.classList.add('reveal-element');
+      revealObserver.observe(el);
+    });
+
+    /* ==========================================================================
+       25. ACTIVE NAV LINK HIGHLIGHTING ON SCROLL
+       ========================================================================== */
+    const navSections = document.querySelectorAll('section[id], header[id], div[id="diya-section"]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(a => {
+            a.classList.remove('active-link');
+            if (a.getAttribute('href') === '#' + id) {
+              a.classList.add('active-link');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    navSections.forEach(s => navObserver.observe(s));
 
   </script>
 
