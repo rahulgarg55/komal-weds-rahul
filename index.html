@@ -2068,6 +2068,52 @@
     }
 
     /* Audio visualizer bar */
+        .hero-music-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 20px;
+      margin-top: 22px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(223, 202, 160, 0.5);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      transition: var(--transition-smooth);
+      user-select: none;
+    }
+
+    .hero-music-pill:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: #ffd700;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .music-note-icon {
+      font-size: 1.05rem;
+      display: inline-block;
+      animation: noteBeat 1.4s infinite ease-in-out;
+    }
+
+    @keyframes noteBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.22); }
+    }
+
+    .hero-music-pill.music-paused .music-note-icon {
+      animation: none;
+      opacity: 0.75;
+    }
+
+    /* Sound visualizer bar */
     .sound-bars-indicator {
       display: flex;
       align-items: flex-end;
@@ -2573,9 +2619,10 @@
   <!-- Hidden Confetti & Flower Shower Container -->
   <div id="flower-container" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;overflow:hidden;"></div>
 
-  <!-- Background Ambient Audio -->
-  <audio id="wedding-ambient-audio" loop preload="none">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2db6f7b5bc.mp3?filename=indian-flute-and-sitar-ambient-10657.mp3" type="audio/mpeg">
+  <!-- Royal Wedding Background Ambient Audio -->
+  <audio id="wedding-ambient-audio" loop preload="auto">
+    <source src="assets/audio/wedding-shehnai.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=shehnai-wedding-tune-112194.mp3" type="audio/mpeg">
   </audio>
 
   <!-- ========================================================================
@@ -2675,6 +2722,16 @@
           <span>📸</span>
           <span>View Moments</span>
         </a>
+      </div>
+
+      <div class="hero-music-pill" id="hero-music-pill" onclick="toggleAudio()" title="Click to play / pause royal wedding music">
+        <span class="music-note-icon">🎵</span>
+        <span id="hero-music-text">Royal Wedding Shehnai • Tap to Play / Pause</span>
+        <div class="sound-bars-indicator sound-paused" id="hero-sound-bars">
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+        </div>
       </div>
     </div>
 
@@ -3676,17 +3733,20 @@
     });
 
     /* ==========================================================================
-       7. AUDIO PLAYER & WEB AUDIO API SYNTHESIZER
+       7. ROYAL WEDDING MUSIC AUTOPLAY & CONTROLLER ENGINE
        ========================================================================== */
     const weddingAudio = document.getElementById('wedding-ambient-audio');
     const soundIndicator = document.getElementById('sound-indicator');
+    const heroSoundBars = document.getElementById('hero-sound-bars');
+    const heroMusicText = document.getElementById('hero-music-text');
+    const heroMusicPill = document.getElementById('hero-music-pill');
     let isAudioPlaying = false;
     let audioCtx = null;
 
     function getAudioCtx() {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return null;
-      if (!audioCtx) audioCtx = new AudioContext();
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      if (!audioCtx) audioCtx = new AC();
       if (audioCtx.state === 'suspended') audioCtx.resume();
       return audioCtx;
     }
@@ -3708,10 +3768,41 @@
           osc.connect(gain);
           gain.connect(ctx.destination);
           osc.start(t);
-          osc.stop(t + 1.45);
+          osc.stop(t + 1.5);
         });
-      } catch (err) {
-        console.log("Audio chime note:", err);
+      } catch (err) {}
+    }
+
+    function syncMusicUI(playing) {
+      isAudioPlaying = playing;
+      if (soundIndicator) {
+        if (playing) soundIndicator.classList.remove('sound-paused');
+        else soundIndicator.classList.add('sound-paused');
+      }
+      if (heroSoundBars) {
+        if (playing) heroSoundBars.classList.remove('sound-paused');
+        else heroSoundBars.classList.add('sound-paused');
+      }
+      if (heroMusicPill) {
+        if (playing) heroMusicPill.classList.remove('music-paused');
+        else heroMusicPill.classList.add('music-paused');
+      }
+      if (heroMusicText) {
+        if (playing) heroMusicText.innerText = "Playing Royal Wedding Shehnai • Tap to Pause";
+        else heroMusicText.innerText = "Royal Wedding Shehnai • Tap to Play";
+      }
+    }
+
+    function playWeddingMusic() {
+      if (!weddingAudio) return;
+      weddingAudio.volume = 0.72;
+      const playPromise = weddingAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          syncMusicUI(true);
+        }).catch(() => {
+          syncMusicUI(false);
+        });
       }
     }
 
@@ -3719,26 +3810,46 @@
       if (!weddingAudio) return;
       if (isAudioPlaying) {
         weddingAudio.pause();
-        isAudioPlaying = false;
-        soundIndicator.classList.add('sound-paused');
-        showToast("Music Paused");
+        syncMusicUI(false);
+        showToast("Music Paused ⏸️");
       } else {
+        weddingAudio.volume = 0.72;
         weddingAudio.play().then(() => {
-          isAudioPlaying = true;
-          soundIndicator.classList.remove('sound-paused');
-          showToast("Playing Wedding Music 🎵");
+          syncMusicUI(true);
+          showToast("Playing Royal Wedding Shehnai 🎵");
         }).catch(() => {
-          // Fallback to soothing Web Audio synthesized chimes
           playGentleChimes();
-          isAudioPlaying = true;
-          soundIndicator.classList.remove('sound-paused');
+          syncMusicUI(true);
           showToast("Playing Royal Harmonics ✨");
-          setTimeout(() => {
-            isAudioPlaying = false;
-            soundIndicator.classList.add('sound-paused');
-          }, 3500);
         });
       }
+    }
+
+    // Auto-start on site opening and first interaction
+    function initAutoplayOnOpen() {
+      // 1. Attempt immediate playback
+      playWeddingMusic();
+
+      // 2. Browser interaction handler (plays music upon very first tap, scroll, or touch anywhere)
+      const startOnGesture = () => {
+        if (!isAudioPlaying && weddingAudio && weddingAudio.paused) {
+          playWeddingMusic();
+          showToast("🎵 Playing Royal Wedding Shehnai");
+        }
+        ['pointerdown', 'touchstart', 'click', 'scroll', 'keydown'].forEach(evt => {
+          window.removeEventListener(evt, startOnGesture, true);
+        });
+      };
+
+      ['pointerdown', 'touchstart', 'click', 'scroll', 'keydown'].forEach(evt => {
+        window.addEventListener(evt, startOnGesture, { once: true, capture: true, passive: true });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAutoplayOnOpen);
+    } else {
+      initAutoplayOnOpen();
     }
 
     /* ==========================================================================
