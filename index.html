@@ -1273,25 +1273,85 @@
     .lightbox-nav-btn.next { right: 24px; }
 
     /* ==========================================================================
-       SECTION 5: WEDDING CEREMONIES & EVENTS ITINERARY
+       SECTION 5: WEDDING CEREMONIES & EVENTS ITINERARY (DAY 1 & DAY 2)
        ========================================================================== */
     .section-itinerary {
       background-color: var(--color-bg);
     }
 
-    .events-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 26px;
+    .itinerary-day-block {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 0 auto 56px auto;
+    }
+
+    .itinerary-day-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .itinerary-day-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .itinerary-day-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .itinerary-day-badge {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary-dark);
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .itinerary-day-badge.wedding-badge {
+      background: linear-gradient(135deg, #7a1523 0%, var(--color-gold-deep) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(184, 134, 11, 0.25);
+    }
+
+    .itinerary-day-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin: 0;
+    }
+
+    .itinerary-day-count {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--color-gold-deep);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .events-cards-grid-day1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
     .event-item-card {
       background: #ffffff;
       border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
-      padding: 34px 26px;
+      padding: 32px 24px;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
@@ -1305,36 +1365,27 @@
       border-color: var(--color-gold);
     }
 
-    .event-item-card.highlight-wedding {
-      border: 1.5px solid var(--color-gold);
-      background: linear-gradient(180deg, #ffffff 0%, #faf6ec 100%);
-    }
-
     .event-badge-tag {
       align-self: flex-start;
       font-family: var(--font-sans);
       font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       padding: 4px 12px;
       border-radius: var(--radius-pill);
       background: var(--color-bg-subtle);
       color: var(--color-primary);
-      margin-bottom: 16px;
-    }
-
-    .event-item-card.highlight-wedding .event-badge-tag {
-      background: var(--color-primary);
-      color: #ffffff;
+      margin-bottom: 14px;
     }
 
     .event-title {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: var(--color-primary-dark);
       margin-bottom: 10px;
       font-weight: 600;
+      line-height: 1.25;
     }
 
     .event-meta-row {
@@ -1360,7 +1411,7 @@
 
     .event-description {
       font-family: var(--font-editorial);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--color-text-muted);
       line-height: 1.6;
       margin-bottom: 20px;
@@ -1393,8 +1444,171 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      border: 1px solid rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.12);
       cursor: help;
+    }
+
+    /* Day 2 Grand Wedding Feature Card */
+    .wedding-featured-card {
+      background: linear-gradient(145deg, #ffffff 0%, #faf6ec 60%, #f7f0e0 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: var(--radius-lg);
+      padding: 44px 38px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 36px;
+      align-items: center;
+      transition: var(--transition-smooth);
+    }
+
+    .wedding-featured-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+      border-color: var(--color-gold-deep);
+    }
+
+    .wedding-featured-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7a1523, var(--color-gold), #7a1523);
+    }
+
+    .wedding-featured-card::after {
+      content: "⚜";
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      font-size: 5.5rem;
+      color: var(--color-gold);
+      opacity: 0.08;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .wedding-featured-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wedding-featured-left .event-badge-tag {
+      background: #7a1523;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .wedding-featured-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.2vw, 2.35rem);
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .wedding-milestones-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0 24px 0;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(191, 160, 84, 0.3);
+      border-radius: var(--radius-sm);
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--color-text-main);
+    }
+
+    .milestone-time {
+      font-weight: 700;
+      color: var(--color-gold-deep);
+      min-width: 68px;
+    }
+
+    .wedding-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .wedding-btn-venue {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: var(--color-primary);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .wedding-btn-venue:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(22, 32, 26, 0.2);
+    }
+
+    .wedding-featured-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .wedding-info-box-title {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wedding-info-box-desc {
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 990px) {
+      .events-cards-grid-day1 {
+        grid-template-columns: 1fr;
+      }
+      .wedding-featured-card {
+        grid-template-columns: 1fr;
+        padding: 30px 22px;
+        gap: 24px;
+      }
+      .wedding-milestones-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ==========================================================================
@@ -2480,99 +2694,163 @@
         <p class="section-desc">We request the honor of your presence and blessings across each joyous celebration.</p>
       </div>
 
-      <div class="events-cards-grid">
-        <!-- Event 1: Mehndi -->
-        <div class="event-item-card reveal-on-scroll">
-          <span class="event-badge-tag">Day 1 • Celebration</span>
-          <h3 class="event-title">Mehndi Ceremony</h3>
-          <div class="event-meta-row">
-            <div class="event-meta-item time">
-              <span>📅 Mon, 23 Nov 2026 • 4:00 PM</span>
+      <!-- DAY 1: PRE-WEDDING CELEBRATIONS (24 NOVEMBER 2026) -->
+      <div class="itinerary-day-block">
+        <div class="itinerary-day-header reveal-on-scroll">
+          <div class="itinerary-day-header-left">
+            <span class="itinerary-day-badge" id="itinerary-day1-badge">Day 1 • Pre-Wedding</span>
+            <h3 class="itinerary-day-title" id="itinerary-day1-title">Tuesday, 24 November 2026</h3>
+          </div>
+          <span class="itinerary-day-count">3 Joyous Celebrations</span>
+        </div>
+
+        <div class="events-cards-grid-day1">
+          <!-- Event 1: Haldi & Chuda -->
+          <div class="event-item-card reveal-on-scroll">
+            <span class="event-badge-tag">Morning Ritual</span>
+            <h3 class="event-title" id="event-haldi-title">Haldi & Chuda</h3>
+            <div class="event-meta-row">
+              <div class="event-meta-item time">
+                <span>📅 Tue, 24 Nov 2026 • 10:00 AM</span>
+              </div>
+              <div class="event-meta-item">
+                <span>📍 Family Residence & Courtyard</span>
+              </div>
             </div>
-            <div class="event-meta-item">
-              <span>📍 Family Residence & Courtyard</span>
+            <p class="event-description">
+              Auspicious golden turmeric blessings bringing radiant joy and warmth, followed by the emotional bridal Chuda and glittering Kaleere ceremony.
+            </p>
+            <div class="event-footer-wrap">
+              <span class="event-attire-label">Palette:</span>
+              <div class="event-color-dots">
+                <div class="color-dot" style="background:#f59e0b;" title="Sunshine Haldi"></div>
+                <div class="color-dot" style="background:#faf8f5;" title="Ivory Silk"></div>
+              </div>
             </div>
           </div>
-          <p class="event-description">
-            Intricate bridal henna artistry, traditional Punjabi folk songs, and joyful dance with close family.
-          </p>
-          <div class="event-footer-wrap">
-            <span class="event-attire-label">Palette:</span>
-            <div class="event-color-dots">
-              <div class="color-dot" style="background:#2e7d32;" title="Emerald Green"></div>
-              <div class="color-dot" style="background:#ffd54f;" title="Mustard Yellow"></div>
+
+          <!-- Event 2: Mehndi Ceremony -->
+          <div class="event-item-card reveal-on-scroll">
+            <span class="event-badge-tag">Afternoon Henna</span>
+            <h3 class="event-title" id="event-mehndi-title">Mehndi Ceremony</h3>
+            <div class="event-meta-row">
+              <div class="event-meta-item time">
+                <span>📅 Tue, 24 Nov 2026 • 3:30 PM</span>
+              </div>
+              <div class="event-meta-item">
+                <span>📍 Courtyard Pavilion</span>
+              </div>
+            </div>
+            <p class="event-description">
+              Intricate bridal henna artistry, fragrant floral decor, traditional folk songs, and joyful dance celebrations with beloved family.
+            </p>
+            <div class="event-footer-wrap">
+              <span class="event-attire-label">Palette:</span>
+              <div class="event-color-dots">
+                <div class="color-dot" style="background:#2e7d32;" title="Emerald Green"></div>
+                <div class="color-dot" style="background:#ffd54f;" title="Mustard Yellow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3: Lady Sangeet & Jaggo -->
+          <div class="event-item-card reveal-on-scroll">
+            <span class="event-badge-tag">Musical Night</span>
+            <h3 class="event-title" id="event-sangeet-title">Lady Sangeet & Jaggo</h3>
+            <div class="event-meta-row">
+              <div class="event-meta-item time">
+                <span>📅 Tue, 24 Nov 2026 • 7:00 PM</span>
+              </div>
+              <div class="event-meta-item">
+                <span>📍 Royal Banquet Hall</span>
+              </div>
+            </div>
+            <p class="event-description">
+              An electrifying celebration of live Punjabi folk music, spirited dhol beats, dancing with luminous Jaggo brass diyas, and celebratory family performances.
+            </p>
+            <div class="event-footer-wrap">
+              <span class="event-attire-label">Palette:</span>
+              <div class="event-color-dots">
+                <div class="color-dot" style="background:#1a237e;" title="Royal Navy"></div>
+                <div class="color-dot" style="background:#d4af37;" title="Gold Shimmer"></div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Event 2: Sangeet & Jaggo -->
-        <div class="event-item-card reveal-on-scroll">
-          <span class="event-badge-tag">Day 2 • Musical Night</span>
-          <h3 class="event-title">Sangeet & Jaggo</h3>
-          <div class="event-meta-row">
-            <div class="event-meta-item time">
-              <span>📅 Tue, 24 Nov 2026 • 7:00 PM</span>
-            </div>
-            <div class="event-meta-item">
-              <span>📍 Royal Banquet Hall</span>
-            </div>
+      <!-- DAY 2: THE AUSPICIOUS WEDDING DAY (25 NOVEMBER 2026) -->
+      <div class="itinerary-day-block">
+        <div class="itinerary-day-header reveal-on-scroll">
+          <div class="itinerary-day-header-left">
+            <span class="itinerary-day-badge wedding-badge" id="itinerary-day2-badge">Day 2 • The Holy Wedding</span>
+            <h3 class="itinerary-day-title" id="itinerary-day2-title">Wednesday, 25 November 2026</h3>
           </div>
-          <p class="event-description">
-            An electrifying night of live Punjabi music, gleaming brass Jaggo diyas, and celebratory family performances.
-          </p>
-          <div class="event-footer-wrap">
-            <span class="event-attire-label">Palette:</span>
-            <div class="event-color-dots">
-              <div class="color-dot" style="background:#1a237e;" title="Royal Navy"></div>
-              <div class="color-dot" style="background:#d4af37;" title="Gold Shimmer"></div>
-            </div>
-          </div>
+          <span class="itinerary-day-count">The Sacred Union</span>
         </div>
 
-        <!-- Event 3: Haldi & Chuda -->
-        <div class="event-item-card reveal-on-scroll">
-          <span class="event-badge-tag">Day 3 • Auspicious Morning</span>
-          <h3 class="event-title">Haldi & Chuda</h3>
-          <div class="event-meta-row">
-            <div class="event-meta-item time">
-              <span>📅 Wed, 25 Nov 2026 • 8:30 AM</span>
+        <div class="wedding-featured-card reveal-on-scroll">
+          <div class="wedding-featured-left">
+            <span class="event-badge-tag">Main Wedding Celebration</span>
+            <h3 class="wedding-featured-title" id="event-wedding-title">Anand Karaj & Grand Feast</h3>
+            <div class="event-meta-row">
+              <div class="event-meta-item time">
+                <span>📅 Wednesday, 25 Nov 2026 • 11:00 AM IST Onwards</span>
+              </div>
+              <div class="event-meta-item">
+                <span>📍 THE GRAND VILAS, NH-52, Dirba - Sangrur Rd, Dirba, Punjab</span>
+              </div>
             </div>
-            <div class="event-meta-item">
-              <span>📍 Courtyard Pavilion</span>
-            </div>
-          </div>
-          <p class="event-description">
-            Golden turmeric blessings for radiant joy, followed by the emotional Chuda & Kaleere ceremony.
-          </p>
-          <div class="event-footer-wrap">
-            <span class="event-attire-label">Palette:</span>
-            <div class="event-color-dots">
-              <div class="color-dot" style="background:#ffb300;" title="Sunshine Ochre"></div>
-              <div class="color-dot" style="background:#faf8f5;" title="Ivory Silk"></div>
-            </div>
-          </div>
-        </div>
+            <p class="event-description">
+              The divine nuptial union uniting two souls in sacred matrimony through the four holy Laavan, followed by celebratory Baraat Welcome, Milni, the Royal Grand Feast, and heartfelt Doli departure blessings.
+            </p>
 
-        <!-- Event 4: Main Wedding & Reception -->
-        <div class="event-item-card highlight-wedding reveal-on-scroll">
-          <span class="event-badge-tag">The Grand Wedding</span>
-          <h3 class="event-title">Anand Karaj & Feast</h3>
-          <div class="event-meta-row">
-            <div class="event-meta-item time">
-              <span>📅 Wed, 25 Nov 2026 • 11:00 AM</span>
+            <div class="wedding-milestones-list">
+              <div class="milestone-item">
+                <span class="milestone-time">10:00 AM</span>
+                <span>Baraat Swagat & Milni</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-time">11:00 AM</span>
+                <span>Sacred Anand Karaj</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-time">01:00 PM</span>
+                <span>Royal Grand Feast</span>
+              </div>
+              <div class="milestone-item">
+                <span class="milestone-time">04:30 PM</span>
+                <span>Doli & Elder Blessings</span>
+              </div>
             </div>
-            <div class="event-meta-item">
-              <span>📍 THE GRAND VILAS, Dirba</span>
+
+            <div class="wedding-actions-row">
+              <a href="#venue" class="wedding-btn-venue">
+                <span>📍 View Venue & Travel Guide</span>
+              </a>
+              <button onclick="downloadCalendarICS()" class="btn-cal-secondary" style="padding:10px 18px; font-size:0.8rem;">
+                <span>💾 Add All Ceremonies to Calendar</span>
+              </button>
             </div>
           </div>
-          <p class="event-description">
-            The sacred nuptial vows uniting two souls, followed by the Royal Grand Feast and evening reception.
-          </p>
-          <div class="event-footer-wrap">
-            <span class="event-attire-label">Palette:</span>
-            <div class="event-color-dots">
-              <div class="color-dot" style="background:#7a1523;" title="Royal Crimson"></div>
-              <div class="color-dot" style="background:#e9dec7;" title="Champagne Silk"></div>
+
+          <div class="wedding-featured-right">
+            <div>
+              <div class="wedding-info-box-title">
+                <span>👑</span>
+                <span>Royal Attire Guidance</span>
+              </div>
+              <p class="wedding-info-box-desc">
+                Traditional Indian Formal / Royal Punjabi attire. Suggested shades: Royal Crimson, Maroon, Champagne Silk, and Antique Gold accents.
+              </p>
+            </div>
+            <div class="event-footer-wrap" style="margin-top:0; padding-top:10px; border-top:1px dashed var(--color-border);">
+              <span class="event-attire-label">Wedding Palette:</span>
+              <div class="event-color-dots">
+                <div class="color-dot" style="background:#7a1523;" title="Royal Crimson"></div>
+                <div class="color-dot" style="background:#d4af37;" title="Antique Gold"></div>
+                <div class="color-dot" style="background:#faf7f2;" title="Silk Cream"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -3134,12 +3412,42 @@ PRODID:-//Komal & Rahul//Wedding Invitation//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:komal-weds-rahul-20261125@thegrandvilas.com
+UID:komal-weds-rahul-haldi-20261124@thegrandvilas.com
+DTSTAMP:20261109T000000Z
+DTSTART:20261124T043000Z
+DTEND:20261124T073000Z
+SUMMARY:Haldi & Chuda Ceremony • Komal & Rahul
+DESCRIPTION:Auspicious turmeric blessings and bridal Chuda & Kaleere ceremony for Komal & Rahul.
+LOCATION:Family Residence & Courtyard
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:komal-weds-rahul-mehndi-20261124@thegrandvilas.com
+DTSTAMP:20261109T000000Z
+DTSTART:20261124T100000Z
+DTEND:20261124T133000Z
+SUMMARY:Mehndi Ceremony • Komal & Rahul
+DESCRIPTION:Bridal henna artistry, traditional folk songs, and joy.
+LOCATION:Courtyard Pavilion
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:komal-weds-rahul-sangeet-20261124@thegrandvilas.com
+DTSTAMP:20261109T000000Z
+DTSTART:20261124T133000Z
+DTEND:20261124T183000Z
+SUMMARY:Lady Sangeet & Jaggo • Komal & Rahul
+DESCRIPTION:Celebratory musical night, Jaggo brass diyas, and family dance performances.
+LOCATION:Royal Banquet Hall
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:komal-weds-rahul-wedding-20261125@thegrandvilas.com
 DTSTAMP:20261109T000000Z
 DTSTART:20261125T053000Z
 DTEND:20261125T143000Z
-SUMMARY:Wedding of Komal & Rahul
-DESCRIPTION:Together with their families, Komal and Rahul cordially invite you to celebrate their holy wedding union and reception at THE GRAND VILAS, Dirba, Punjab.
+SUMMARY:The Grand Wedding: Anand Karaj & Royal Feast • Komal & Rahul
+DESCRIPTION:Together with their families, Komal and Rahul cordially invite you to celebrate their sacred wedding union and royal feast at THE GRAND VILAS, Dirba, Punjab.
 LOCATION:THE GRAND VILAS, NH-52, Dirba - Sangrur Rd, Dirba, Punjab 148035
 STATUS:CONFIRMED
 END:VEVENT
@@ -3148,11 +3456,11 @@ END:VCALENDAR`;
       const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.setAttribute('download', 'Komal-and-Rahul-Wedding-2026.ics');
+      link.setAttribute('download', 'Komal-and-Rahul-Wedding-Itinerary-2026.ics');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      showToast("Calendar invite downloaded! 📅");
+      showToast("Full wedding weekend calendar downloaded! 📅");
     }
 
     /* ==========================================================================
@@ -3272,6 +3580,14 @@ END:VCALENDAR`;
         document.getElementById('blessings-pretitle').innerText = "ਸ਼ੁਭ ਅਸੀਸਾਂ";
         document.getElementById('blessings-quote').innerText = "ਦੋ ਰੂਹਾਂ ਦਾ ਇੱਕ ਪਵਿੱਤਰ ਮੇਲ, ਜੋ ਪਰਿਵਾਰਾਂ ਨੂੰ ਪਿਆਰ ਅਤੇ ਅਸੀਸਾਂ ਨਾਲ ਜੋੜਦਾ ਹੈ।";
         document.getElementById('blessings-body').innerText = "ਪਰਮਾਤਮਾ ਦੀ ਅਪਾਰ ਕਿਰਪਾ ਅਤੇ ਸਮੂਹ ਬਜ਼ੁਰਗਾਂ ਦੇ ਸ਼ੁਭ ਆਸ਼ੀਰਵਾਦ ਸਦਕਾ ਆਪ ਜੀ ਨੂੰ ਇਸ ਖੁਸ਼ੀ ਦੇ ਮੌਕੇ 'ਤੇ ਸ਼ਾਮਿਲ ਹੋਣ ਦਾ ਨਿੱਘਾ ਸੱਦਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।";
+        const d1b = document.getElementById('itinerary-day1-badge'); if (d1b) d1b.innerText = "ਦਿਨ ੧ • ਸ਼ੁਭ ਰਸਮਾਂ";
+        const d1t = document.getElementById('itinerary-day1-title'); if (d1t) d1t.innerText = "ਮੰਗਲਵਾਰ, ੨੪ ਨਵੰਬਰ ੨੦੨੬";
+        const d2b = document.getElementById('itinerary-day2-badge'); if (d2b) d2b.innerText = "ਦਿਨ ੨ • ਸ਼ੁਭ ਵਿਆਹ ਦਿਵਸ";
+        const d2t = document.getElementById('itinerary-day2-title'); if (d2t) d2t.innerText = "ਬੁੱਧਵਾਰ, ੨੫ ਨਵੰਬਰ ੨੦੨੬";
+        const eh = document.getElementById('event-haldi-title'); if (eh) eh.innerText = "ਹਲਦੀ ਅਤੇ ਚੂੜਾ ਰਸਮ";
+        const em = document.getElementById('event-mehndi-title'); if (em) em.innerText = "ਮਹਿੰਦੀ ਦੀ ਰਸਮ";
+        const es = document.getElementById('event-sangeet-title'); if (es) es.innerText = "ਲੇਡੀਜ਼ ਸੰਗੀਤ ਅਤੇ ਜਾਗੋ";
+        const ew = document.getElementById('event-wedding-title'); if (ew) ew.innerText = "ਸ਼ੁਭ ਅਨੰਦ ਕਾਰਜ ਅਤੇ ਸ਼ਾਹੀ ਪ੍ਰੀਤੀ ਭੋਜ";
         showToast("ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਵਿੱਚ ਬਦਲਿਆ ਗਿਆ ੴ");
       } else {
         btn.innerText = "ੴ ਪੰਜਾਬੀ";
@@ -3280,6 +3596,14 @@ END:VCALENDAR`;
         document.getElementById('blessings-pretitle').innerText = "The Sacred Union";
         document.getElementById('blessings-quote').innerText = '"Two souls with but a single thought, two hearts that beat as one."';
         document.getElementById('blessings-body').innerText = "In the divine grace of the Almighty and guided by the love and blessings of our beloved elders, we invite you to be part of our most cherished milestone.";
+        const d1b = document.getElementById('itinerary-day1-badge'); if (d1b) d1b.innerText = "Day 1 • Pre-Wedding";
+        const d1t = document.getElementById('itinerary-day1-title'); if (d1t) d1t.innerText = "Tuesday, 24 November 2026";
+        const d2b = document.getElementById('itinerary-day2-badge'); if (d2b) d2b.innerText = "Day 2 • The Holy Wedding";
+        const d2t = document.getElementById('itinerary-day2-title'); if (d2t) d2t.innerText = "Wednesday, 25 November 2026";
+        const eh = document.getElementById('event-haldi-title'); if (eh) eh.innerText = "Haldi & Chuda";
+        const em = document.getElementById('event-mehndi-title'); if (em) em.innerText = "Mehndi Ceremony";
+        const es = document.getElementById('event-sangeet-title'); if (es) es.innerText = "Lady Sangeet & Jaggo";
+        const ew = document.getElementById('event-wedding-title'); if (ew) ew.innerText = "Anand Karaj & Grand Feast";
         showToast("Switched to English");
       }
       playGentleChimes();
