@@ -216,31 +216,34 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(250, 247, 242, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--color-border-subtle);
       transition: var(--transition-smooth);
     }
 
     .site-nav.scrolled {
-      background: rgba(250, 247, 242, 0.96);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      background: rgba(250, 247, 242, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
     .nav-inner {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 13px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .nav-brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .nav-monogram {
@@ -256,6 +259,7 @@
       font-weight: 700;
       color: var(--color-gold);
       background: rgba(255, 255, 255, 0.6);
+      flex-shrink: 0;
     }
 
     .nav-title {
@@ -264,6 +268,7 @@
       font-weight: 600;
       color: var(--color-primary-dark);
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -271,23 +276,30 @@
       align-items: center;
       gap: 22px;
       list-style: none;
+      margin: 0 auto;
+    }
+
+    .nav-links li {
+      white-space: nowrap;
     }
 
     .nav-links a {
       font-family: var(--font-sans);
-      font-size: 0.78rem;
-      font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       color: var(--color-text-muted);
       position: relative;
       padding: 6px 0;
+      white-space: nowrap;
+      display: inline-block;
       transition: color 0.25s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--color-primary);
+      color: var(--color-primary-dark);
     }
 
     .nav-links a::after {
@@ -296,7 +308,7 @@
       bottom: 0;
       left: 50%;
       width: 0;
-      height: 1.5px;
+      height: 2px;
       background: var(--color-gold);
       transition: all 0.25s ease;
       transform: translateX(-50%);
@@ -310,45 +322,73 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .btn-lang {
-      background: transparent;
+      background: rgba(191, 160, 84, 0.08);
       border: 1px solid var(--color-gold);
-      color: var(--color-primary);
-      padding: 6px 14px;
+      color: var(--color-primary-dark);
+      padding: 7px 14px;
       border-radius: var(--radius-pill);
       font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.76rem;
+      font-weight: 700;
       cursor: pointer;
-      transition: var(--transition-smooth);
+      white-space: nowrap;
+      transition: var(--transition-fast);
+      line-height: 1;
     }
 
     .btn-lang:hover {
       background: var(--color-gold);
       color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-nav-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .btn-nav-icon:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold-deep);
+      background: rgba(191, 160, 84, 0.1);
+      transform: translateY(-1px);
     }
 
     .btn-nav-rsvp {
       background: var(--color-primary);
       color: #fff !important;
-      padding: 7px 18px;
+      padding: 8px 20px;
       border-radius: var(--radius-pill);
       font-family: var(--font-sans);
-      font-size: 0.76rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       border: 1px solid transparent;
+      white-space: nowrap;
       transition: var(--transition-smooth);
     }
 
     .btn-nav-rsvp:hover {
-      background: var(--color-primary-dark);
-      border-color: var(--color-gold);
+      background: var(--color-gold-deep);
       transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(161, 129, 54, 0.35);
     }
 
     /* Mobile hamburger toggle */
@@ -2226,13 +2266,16 @@
       }
     }
 
-    @media (max-width: 900px) {
-      .nav-links, .btn-nav-rsvp {
-        display: none;
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none !important;
       }
       .mobile-menu-btn {
-        display: flex;
+        display: flex !important;
       }
+    }
+
+    @media (max-width: 900px) {
       .save-date-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2248,6 +2291,18 @@
     }
 
     @media (max-width: 600px) {
+      .nav-inner {
+        padding: 10px 16px;
+      }
+      .nav-title {
+        font-size: 1.18rem;
+      }
+      .btn-nav-rsvp {
+        display: none !important;
+      }
+      .btn-nav-icon {
+        display: none !important;
+      }
       .section-wrap {
         padding: 80px 18px;
       }
@@ -2636,21 +2691,24 @@
       </a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#hero">Home</a></li>
         <li><a href="#blessings">Blessings</a></li>
-        <li><a href="#save-date">Save The Date</a></li>
+        <li><a href="#save-date">Date</a></li>
         <li><a href="#couple">The Couple</a></li>
         <li><a href="#gallery">Moments</a></li>
         <li><a href="#ceremonies">Itinerary</a></li>
         <li><a href="#venue">Venue</a></li>
-        <li><a href="#rsvp">RSVP & Wishes</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="btn-lang" id="lang-btn" onclick="toggleLanguage()" aria-label="Toggle language">ੴ ਪੰਜਾਬੀ</button>
-        <button type="button" class="btn-cal-secondary" onclick="shareInvitation()" style="padding:6px 14px; font-size:0.75rem; border-color:var(--color-gold);" title="Share Invitation">
-          <span>📤</span>
-          <span>Share</span>
+        <button type="button" class="btn-nav-icon" onclick="shareInvitation()" title="Share Invitation" aria-label="Share">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
         </button>
         <a href="#rsvp" class="btn-nav-rsvp">RSVP</a>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
