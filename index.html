@@ -15,16 +15,30 @@
   <title>Komal & Rahul | Wedding Invitation • 25 November 2026</title>
   
   <meta name="description" content="Together with their families, Komal and Rahul joyfully invite you to celebrate their holy union at THE GRAND VILAS, Dirba, Punjab on 25 November 2026.">
-  <meta property="og:title" content="Komal & Rahul | Wedding Celebration">
-  <meta property="og:description" content="Wednesday, 25 November 2026 • THE GRAND VILAS, Dirba, Punjab">
+  <meta property="og:title" content="Komal & Rahul | Wedding Celebration • 25 Nov 2026">
+  <meta property="og:description" content="Together with their families, Komal & Rahul cordially invite you to celebrate their holy union at THE GRAND VILAS, Dirba, Punjab on 24 & 25 November 2026.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rahulgarg55.github.io/komal-weds-rahul/">
-  <meta name="theme-color" content="#1c2820">
+  <meta property="og:image" content="https://rahulgarg55.github.io/komal-weds-rahul/assets/photos/couple-spotlight.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Komal and Rahul Royal Wedding">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Komal & Rahul | Wedding Celebration">
+  <meta name="twitter:description" content="Wednesday, 25 November 2026 • THE GRAND VILAS, Dirba, Punjab">
+  <meta name="twitter:image" content="https://rahulgarg55.github.io/komal-weds-rahul/assets/photos/couple-spotlight.jpg">
+  <meta name="theme-color" content="#16201a">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <link rel="apple-touch-icon" href="assets/photos/couple-spotlight.jpg">
 
-  <!-- Google Fonts: Cormorant Garamond, Cinzel, Playfair Display, Plus Jakarta Sans -->
+  <!-- Preload hero poster for ultra-fast LCP -->
+  <link rel="preload" as="image" href="assets/photos/gallery-12-royalelegance-thumb.jpg">
+
+  <!-- Google Fonts DNS Prefetch & Connect -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -2240,6 +2254,315 @@
         border-radius: 50%;
       }
     }
+    /* ==========================================================================
+       TRADITIONAL VIRTUAL SHAGUN LIFAFA MODAL
+       ========================================================================== */
+    .shagun-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: rgba(15, 24, 19, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .shagun-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .shagun-modal-card {
+      background: linear-gradient(155deg, #2b0b10 0%, #170508 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: var(--radius-lg);
+      padding: 38px 30px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(191, 160, 84, 0.2);
+      position: relative;
+      text-align: center;
+      color: #faf7f2;
+      animation: modalSlideUp 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @keyframes modalSlideUp {
+      from { transform: translateY(30px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .shagun-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .shagun-close-btn:hover {
+      background: #7a1523;
+      border-color: var(--color-gold);
+      transform: scale(1.08);
+    }
+
+    .shagun-header-icon {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .shagun-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: var(--color-gold-light);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .shagun-subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: #dfcaa0;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .shagun-envelope-visual {
+      background: linear-gradient(135deg, #7a1523 0%, #4a0c14 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .shagun-coin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--color-gold);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 8px;
+    }
+
+    .shagun-meaning-text {
+      font-family: var(--font-editorial);
+      font-size: 0.92rem;
+      color: #f7eedc;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .shagun-stamp-display {
+      font-size: 2.3rem;
+      color: #ffd700;
+      margin-top: 8px;
+      line-height: 1;
+    }
+
+    .shagun-form-label {
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      text-align: left;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .shagun-amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .shagun-amount-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(191, 160, 84, 0.35);
+      color: #faf7f2;
+      padding: 10px 6px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .shagun-amount-btn:hover, .shagun-amount-btn.active {
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-deep) 100%);
+      color: #1a201c;
+      border-color: #ffd700;
+      box-shadow: 0 4px 12px rgba(191, 160, 84, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .shagun-seals-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .shagun-seal-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(191, 160, 84, 0.35);
+      font-size: 1.25rem;
+      color: var(--color-gold-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .shagun-seal-btn:hover, .shagun-seal-btn.active {
+      background: #7a1523;
+      border-color: #ffd700;
+      color: #ffd700;
+      transform: scale(1.15);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.4);
+    }
+
+    .shagun-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(191, 160, 84, 0.35);
+      border-radius: var(--radius-sm);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      margin-bottom: 12px;
+      transition: var(--transition-fast);
+    }
+
+    .shagun-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-shagun-submit {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, #7a1523 0%, #b8860b 100%);
+      border: 1px solid #ffd700;
+      color: #ffffff;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(122, 21, 35, 0.4);
+      transition: var(--transition-smooth);
+      margin-top: 4px;
+    }
+
+    .btn-shagun-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(122, 21, 35, 0.6);
+      filter: brightness(1.1);
+    }
+
+    /* Mobile Quick-Access Bottom Bar */
+    .mobile-quick-bar {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-quick-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 62px;
+        background: rgba(22, 32, 26, 0.95);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-top: 1px solid rgba(191, 160, 84, 0.3);
+        z-index: 9999;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 4px;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .mobile-quick-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        color: #dfcaa0;
+        text-decoration: none;
+        font-family: var(--font-sans);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: var(--radius-sm);
+        transition: var(--transition-fast);
+        border: none;
+        background: transparent;
+      }
+
+      .mobile-quick-item:active, .mobile-quick-item:hover {
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+
+      .mobile-quick-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      body {
+        padding-bottom: 64px;
+      }
+
+      .float-blessings-pill {
+        bottom: 74px !important;
+        left: 16px !important;
+      }
+
+      .toast-popup {
+        bottom: 78px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2278,6 +2601,10 @@
 
       <div class="nav-actions">
         <button class="btn-lang" id="lang-btn" onclick="toggleLanguage()" aria-label="Toggle language">ੴ ਪੰਜਾਬੀ</button>
+        <button type="button" class="btn-cal-secondary" onclick="shareInvitation()" style="padding:6px 14px; font-size:0.75rem; border-color:var(--color-gold);" title="Share Invitation">
+          <span>📤</span>
+          <span>Share</span>
+        </button>
         <a href="#rsvp" class="btn-nav-rsvp">RSVP</a>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
           <span></span>
@@ -2308,7 +2635,7 @@
        ======================================================================== -->
   <header class="hero-cinematic" id="hero">
     <div class="hero-video-wrap">
-      <video class="hero-video" id="hero-video" autoplay loop muted playsinline preload="auto" poster="assets/photos/gallery-12-royalelegance.jpg">
+      <video class="hero-video" id="hero-video" autoplay loop muted playsinline preload="auto" poster="assets/photos/gallery-12-royalelegance-thumb.jpg">
         <source src="assets/royal-grace.mp4" type="video/mp4">
       </video>
       <div class="hero-scrim"></div>
@@ -2366,7 +2693,7 @@
     <div class="section-container">
       <div class="blessing-card reveal-on-scroll">
         <div class="blessing-seal-wrap">
-          <img src="assets/photos/gallery-10-royalsteps.jpg" alt="Komal and Rahul Royal Walk" class="blessing-seal-img">
+          <img src="assets/photos/gallery-10-royalsteps-thumb.jpg" alt="Komal and Rahul Royal Walk" class="blessing-seal-img" width="110" height="110" loading="eager" decoding="async">
         </div>
         <div class="section-pretitle" id="blessings-pretitle">The Sacred Union</div>
         <div class="crest-divider">
@@ -2522,7 +2849,7 @@
         <!-- 1. Serenade by Car -->
         <div class="gallery-card reveal-on-scroll" data-category="night" onclick="openLightbox(0)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-1-serenade.jpg" alt="Serenade Under The Stars" loading="lazy">
+            <img src="assets/photos/gallery-1-serenade-thumb.jpg" alt="Serenade Under The Stars" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Serenade Under The Stars</h4>
@@ -2534,7 +2861,7 @@
         <!-- 2. Whispers by the Springs -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(1)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-2-intimate.jpg" alt="Whispers by the Springs" loading="lazy">
+            <img src="assets/photos/gallery-2-intimate-thumb.jpg" alt="Whispers by the Springs" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Whispers by the Springs</h4>
@@ -2546,7 +2873,7 @@
         <!-- 3. Majesty of the Falls -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(2)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-3-waterfall.jpg" alt="Majesty of the Falls" loading="lazy">
+            <img src="assets/photos/gallery-3-waterfall-thumb.jpg" alt="Majesty of the Falls" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Majesty of the Falls</h4>
@@ -2558,7 +2885,7 @@
         <!-- 4. Embraced in Serenity -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(3)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-4-embrace.jpg" alt="Embraced in Serenity" loading="lazy">
+            <img src="assets/photos/gallery-4-embrace-thumb.jpg" alt="Embraced in Serenity" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Embraced in Serenity</h4>
@@ -2570,7 +2897,7 @@
         <!-- 5. The Eternal Promise -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(4)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-5-hands.jpg" alt="The Eternal Promise" loading="lazy">
+            <img src="assets/photos/gallery-5-hands-thumb.jpg" alt="The Eternal Promise" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">The Eternal Promise</h4>
@@ -2582,7 +2909,7 @@
         <!-- 6. Moments of Pure Joy -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(5)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-6-joy.jpg" alt="Moments of Pure Joy" loading="lazy">
+            <img src="assets/photos/gallery-6-joy-thumb.jpg" alt="Moments of Pure Joy" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Moments of Pure Joy</h4>
@@ -2594,7 +2921,7 @@
         <!-- 7. Waterside Calm -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(6)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-7-waterside.jpg" alt="Reflections in the Springs" loading="lazy">
+            <img src="assets/photos/gallery-7-waterside-thumb.jpg" alt="Reflections in the Springs" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Reflections in the Springs</h4>
@@ -2606,7 +2933,7 @@
         <!-- 8. Riverbank Reflections -->
         <div class="gallery-card reveal-on-scroll" data-category="waterfall" onclick="openLightbox(7)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-8-riverbank.jpg" alt="Riverbank Reflections" loading="lazy">
+            <img src="assets/photos/gallery-8-riverbank-thumb.jpg" alt="Riverbank Reflections" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Riverbank Reflections</h4>
@@ -2618,7 +2945,7 @@
         <!-- 9. A Twilight Fairy Tale -->
         <div class="gallery-card reveal-on-scroll" data-category="royal" onclick="openLightbox(8)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-9-fairytale.jpg" alt="A Twilight Fairy Tale" loading="lazy">
+            <img src="assets/photos/gallery-9-fairytale-thumb.jpg" alt="A Twilight Fairy Tale" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">A Twilight Fairy Tale</h4>
@@ -2630,7 +2957,7 @@
         <!-- 10. The Royal Forest Walk -->
         <div class="gallery-card reveal-on-scroll" data-category="royal" onclick="openLightbox(9)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-10-royalsteps.jpg" alt="The Sacred Walk" loading="lazy">
+            <img src="assets/photos/gallery-10-royalsteps-thumb.jpg" alt="The Sacred Walk" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">The Sacred Walk</h4>
@@ -2642,7 +2969,7 @@
         <!-- 11. Streetlight Guitar -->
         <div class="gallery-card reveal-on-scroll" data-category="night" onclick="openLightbox(10)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-11-nightguitar.jpg" alt="Streetlight Melody" loading="lazy">
+            <img src="assets/photos/gallery-11-nightguitar-thumb.jpg" alt="Streetlight Melody" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Streetlight Melody</h4>
@@ -2654,7 +2981,7 @@
         <!-- 12. Royal Elegance -->
         <div class="gallery-card reveal-on-scroll" data-category="royal" onclick="openLightbox(11)">
           <div class="gallery-img-wrap">
-            <img src="assets/photos/gallery-12-royalelegance.jpg" alt="Royal Grace & Splendor" loading="lazy">
+            <img src="assets/photos/gallery-12-royalelegance-thumb.jpg" alt="Royal Grace & Splendor" width="600" height="400" loading="lazy" decoding="async">
             <div class="gallery-overlay">
               <span class="gallery-zoom-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></span>
               <h4 class="gallery-item-title">Royal Grace & Splendor</h4>
@@ -2665,6 +2992,75 @@
       </div>
     </div>
   </section>
+
+  <!-- Traditional Virtual Shagun Lifafa Modal -->
+  <div class="shagun-modal-overlay" id="shagun-modal" onclick="closeShagunOnBackdrop(event)">
+    <div class="shagun-modal-card">
+      <button class="shagun-close-btn" onclick="closeShagunModal()" aria-label="Close modal">✕</button>
+      <span class="shagun-header-icon">🧧</span>
+      <h3 class="shagun-title">Traditional Shagun Lifafa</h3>
+      <p class="shagun-subtitle">ਸ਼ਗਨ ਦਾ ਲਿਫ਼ਾਫ਼ਾ • Auspicious Wedding Blessing</p>
+
+      <div class="shagun-envelope-visual">
+        <div class="shagun-coin-badge">
+          <span>🪙</span>
+          <span id="selected-shagun-label">Auspicious ₹1,101 Shagun</span>
+        </div>
+        <p class="shagun-meaning-text">In Indian culture, the <strong>+₹1 coin</strong> symbolizes unending abundance, eternal prosperity, and love that never finishes.</p>
+        <div class="shagun-stamp-display" id="shagun-stamp-preview">ੴ</div>
+      </div>
+
+      <span class="shagun-form-label">Select Auspicious Shagun:</span>
+      <div class="shagun-amount-grid">
+        <button type="button" class="shagun-amount-btn" onclick="setShagunAmount(101, this)">₹101</button>
+        <button type="button" class="shagun-amount-btn" onclick="setShagunAmount(501, this)">₹501</button>
+        <button type="button" class="shagun-amount-btn active" onclick="setShagunAmount(1101, this)">₹1,101</button>
+        <button type="button" class="shagun-amount-btn" onclick="setShagunAmount(2101, this)">₹2,101</button>
+        <button type="button" class="shagun-amount-btn" onclick="setShagunAmount(5101, this)">₹5,101</button>
+        <button type="button" class="shagun-amount-btn" onclick="setShagunCustom(this)">Custom</button>
+      </div>
+
+      <span class="shagun-form-label">Select Auspicious Sacred Seal:</span>
+      <div class="shagun-seals-row">
+        <button type="button" class="shagun-seal-btn active" onclick="setShagunStamp('ੴ', this)">ੴ</button>
+        <button type="button" class="shagun-seal-btn" onclick="setShagunStamp('☬', this)">☬</button>
+        <button type="button" class="shagun-seal-btn" onclick="setShagunStamp('🪷', this)">🪷</button>
+        <button type="button" class="shagun-seal-btn" onclick="setShagunStamp('🦚', this)">🦚</button>
+        <button type="button" class="shagun-seal-btn" onclick="setShagunStamp('⚜', this)">⚜</button>
+      </div>
+
+      <input type="text" id="shagun-sender-name" class="shagun-input" placeholder="Your Name / Family Name" required>
+      <input type="text" id="shagun-message-text" class="shagun-input" placeholder="Auspicious Blessing (e.g. May Waheguru shower eternal happiness!)">
+
+      <button type="button" class="btn-shagun-submit" onclick="sealAndSendShagun()">
+        ✉️ Seal & Bestow Shagun
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Quick-Access Bottom Bar -->
+  <nav class="mobile-quick-bar" aria-label="Mobile quick actions">
+    <a href="#save-date" class="mobile-quick-item">
+      <span class="mobile-quick-icon">📅</span>
+      <span>Date</span>
+    </a>
+    <a href="#ceremonies" class="mobile-quick-item">
+      <span class="mobile-quick-icon">🗓️</span>
+      <span>Events</span>
+    </a>
+    <a href="#venue" class="mobile-quick-item">
+      <span class="mobile-quick-icon">📍</span>
+      <span>Venue</span>
+    </a>
+    <button type="button" class="mobile-quick-item" onclick="openShagunModal()">
+      <span class="mobile-quick-icon">🧧</span>
+      <span>Shagun</span>
+    </button>
+    <a href="#rsvp" class="mobile-quick-item">
+      <span class="mobile-quick-icon">💌</span>
+      <span>RSVP</span>
+    </a>
+  </nav>
 
   <!-- Photo Lightbox Modal -->
   <div class="photo-lightbox-modal" id="photo-lightbox" onclick="closeLightboxOnBackdrop(event)">
